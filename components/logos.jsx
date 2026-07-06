@@ -13,6 +13,16 @@ export const PRODUCT_COLORS = {
   logistara: '#1E40AF',
 };
 
+// Teintes dérivées pour le théming des pages produit :
+// accent (couleur du logo) / dark (hover, texte) / soft (fonds pastel).
+export const PRODUCT_THEME = {
+  dialya: { accent: '#0D9488', dark: '#0F766E', soft: '#F0FDFA' },
+  labya: { accent: '#06B6D4', dark: '#0891B2', soft: '#ECFEFF' },
+  medira: { accent: '#0891B2', dark: '#0E7490', soft: '#ECFEFF' },
+  rentara: { accent: '#F59E0B', dark: '#D97706', soft: '#FFFBEB' },
+  logistara: { accent: '#1E40AF', dark: '#1E3A8A', soft: '#EFF6FF' },
+};
+
 function DialyaIcon({ size }) {
   return (
     <svg width={size} height={size} viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
