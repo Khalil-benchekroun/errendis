@@ -61,13 +61,14 @@ const MOCKUPS = {
 
   dialya: {
     url: 'dialya.errendis.com',
-    nav: ['Séances', 'Patients', 'Postes', 'Traçabilité', 'Facturation'],
+    real: true, // rendu fidèle au vrai prototype (petrol/teal)
+    nav: ['Tableau de bord', 'Patients', 'Planning séances', 'Séances en direct', 'Biologie & alertes'],
     kpis: [
-      { label: 'Séances aujourd\u2019hui', value: '26', delta: null },
-      { label: 'Postes occupés', value: '8 / 10', delta: null },
-      { label: 'Alertes', value: '2', delta: null },
+      { label: 'Séances aujourd\u2019hui', value: '26' },
+      { label: 'Postes occupés', value: '8/10' },
+      { label: 'Alertes actives', value: '2' },
     ],
-    tableTitle: 'Séances du jour',
+    tableTitle: 'Séances en direct',
     rows: [
       { c1: 'Poste 1', c2: '08:00 — M. Idrissi', chip: 'Terminée', tone: 'ok' },
       { c1: 'Poste 2', c2: '08:00 — Mme Cherkaoui', chip: 'En séance', tone: 'pending' },
@@ -96,9 +97,74 @@ const MOCKUPS = {
 
 const DAYS = ['Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam', 'Dim'];
 
+/**
+ * Rendu fidèle au vrai design system du prototype (ex. Dialya) :
+ * sidebar petrol foncé, accent teal, KPI en police mono, badges
+ * colorés — reprend exactement la charte de l'app réelle plutôt
+ * qu'un mockup générique.
+ */
+function RealisticMockup({ slug, name, m }) {
+  return (
+    <div className="mockup mockup--real" role="img" aria-label={`Aperçu de l'interface ${name}`}>
+      <div className="mockup-bar">
+        <span className="mockup-dots">
+          <i />
+          <i />
+          <i />
+        </span>
+        <span className="mockup-url">{m.url}</span>
+      </div>
+
+      <div className="mockup-body mockup-body--real">
+        <aside className="mockup-side mockup-side--real">
+          <div className="mockup-side-logo mockup-side-logo--real">
+            <ProductIcon slug={slug} size={18} />
+            {name}
+          </div>
+          <ul>
+            {m.nav.map((item, i) => (
+              <li key={item} className={i === 0 ? 'active' : ''}>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </aside>
+
+        <div className="mockup-main">
+          <div className="mockup-kpis mockup-kpis--real">
+            {m.kpis.map((k) => (
+              <div className="mockup-kpi mockup-kpi--real" key={k.label}>
+                <span className="mockup-kpi-label">{k.label}</span>
+                <span className="mockup-kpi-value mockup-kpi-value--mono">{k.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <div className="mockup-panel mockup-panel--real">
+            <div className="mockup-panel-title">{m.tableTitle}</div>
+            <ul className="mockup-rows">
+              {m.rows.map((r) => (
+                <li key={r.c1}>
+                  <span className="mockup-ref mockup-ref--mono">{r.c1}</span>
+                  <span className="mockup-cell">{r.c2}</span>
+                  <span className={`mockup-chip mockup-chip--${r.tone}`}>{r.chip}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function ProductMockup({ slug, name }) {
   const m = MOCKUPS[slug];
   if (!m) return null;
+
+  if (m.real) {
+    return <RealisticMockup slug={slug} name={name} m={m} />;
+  }
 
   return (
     <div className="mockup" role="img" aria-label={`Aperçu de l'interface ${name}`}>

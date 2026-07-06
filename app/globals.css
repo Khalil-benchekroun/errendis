@@ -1229,3 +1229,161 @@ svg {
 .product-hero-lockup h1 {
   margin-bottom: 0 !important;
 }
+
+/* ── Théming dynamique par produit ────────────────────────────
+   Chaque page /produits/[slug] injecte --accent / --accent-dark
+   / --accent-soft via style inline (voir page.jsx). Tous les
+   éléments de CONTENU de la page produit utilisent ces variables
+   au lieu du bleu Errendis fixe. Header/footer restent bleu —
+   seule la zone produit se teinte.
+   ──────────────────────────────────────────────────────────── */
+
+.product-theme {
+  --accent: var(--blue-600);
+  --accent-dark: var(--blue-700);
+  --accent-soft: var(--blue-050);
+}
+
+.product-theme .product-hero {
+  background: linear-gradient(160deg, var(--accent-soft) 0%, #fff 60%);
+}
+
+.product-theme .product-hero-sector {
+  color: var(--accent-dark);
+}
+
+.product-theme .breadcrumb a {
+  color: var(--accent-dark);
+}
+
+.product-theme .btn--primary {
+  background: var(--accent);
+}
+
+.product-theme .btn--primary:hover {
+  background: var(--accent-dark);
+  filter: brightness(0.94);
+}
+
+.product-theme .feature-card {
+  border-color: var(--border);
+}
+
+.product-theme .feature-card:hover {
+  border-color: var(--accent-soft);
+  box-shadow: var(--shadow-card-hover);
+}
+
+.product-theme .feature-card h3 {
+  color: var(--accent-dark);
+}
+
+.product-theme .audience-note {
+  background: var(--accent-soft);
+  border-color: var(--accent-soft);
+}
+
+.product-theme .audience-note strong,
+.product-theme .audience-note a {
+  color: var(--accent-dark);
+}
+
+.product-theme .cta-band {
+  background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+}
+
+.product-theme .cta-band p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.product-theme .cta-band .btn--primary {
+  background: #fff;
+  color: var(--accent-dark);
+}
+
+.product-theme .cta-band .btn--primary:hover {
+  background: var(--accent-soft);
+  filter: none;
+}
+
+.product-theme .section-eyebrow {
+  color: var(--accent-dark);
+}
+
+.product-theme .section-eyebrow::before {
+  background: linear-gradient(90deg, var(--accent), var(--accent-dark));
+}
+
+/* Léger fondu en haut de page pour transitionner depuis le
+   header bleu Errendis vers la couleur du produit. */
+.product-theme {
+  transition: background 0.2s ease;
+}
+
+/* ── Mockup "réaliste" — reprend la vraie charte du prototype
+   (ex. Dialya : petrol/teal, IBM Plex Mono pour les valeurs) ── */
+
+.mockup--real {
+  font-family: 'IBM Plex Sans', var(--font-body);
+}
+
+.mockup-body--real {
+  grid-template-columns: 158px 1fr;
+}
+
+.mockup-side--real {
+  background: #0C2B30;
+  border-right: none;
+}
+
+.mockup-side-logo--real {
+  color: #fff;
+  font-family: var(--font-display);
+}
+
+.mockup-side--real ul li {
+  color: #B9D2D0;
+}
+
+.mockup-side--real ul li.active {
+  background: #164750;
+  color: #fff;
+  position: relative;
+}
+
+.mockup-side--real ul li.active::before {
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: 6px;
+  bottom: 6px;
+  width: 3px;
+  border-radius: 0 3px 3px 0;
+  background: #12A5A0;
+}
+
+.mockup-kpi--real {
+  border-color: #E1EBE9;
+}
+
+.mockup-kpi-value--mono {
+  font-family: var(--font-mono), monospace;
+  font-size: 16px;
+}
+
+.mockup-panel--real {
+  border-color: #E1EBE9;
+}
+
+.mockup-panel--real .mockup-panel-title {
+  color: #13282C;
+}
+
+.mockup-ref--mono {
+  font-family: var(--font-mono), monospace;
+  color: #0B7E7A;
+}
+
+.mockup--real .mockup-rows li:hover {
+  background: #F0F8F7;
+}
