@@ -1387,3 +1387,193 @@ svg {
 .mockup--real .mockup-rows li:hover {
   background: #F0F8F7;
 }
+
+/* ── Bandeau de stats (StatsBand) ─────────────────────────── */
+
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 22px;
+  background: var(--accent-soft, var(--blue-050));
+  border-radius: 20px;
+  padding: 36px 40px;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-value {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  color: var(--accent-dark, var(--blue-700));
+  letter-spacing: -0.02em;
+}
+
+.stat-label {
+  display: block;
+  margin-top: 6px;
+  color: var(--slate);
+  font-size: 0.92rem;
+}
+
+/* ── Modules en zigzag (ModuleShowcase) ───────────────────── */
+
+.modules-zigzag {
+  display: flex;
+  flex-direction: column;
+  gap: 54px;
+}
+
+.module-row {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: center;
+}
+
+.module-row--reverse {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.module-row--reverse .module-text {
+  order: 2;
+}
+
+.module-row--reverse .module-visual {
+  order: 1;
+}
+
+.module-index {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent, var(--blue-600));
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+}
+
+.module-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 12px;
+}
+
+.module-text p {
+  color: var(--slate);
+  font-size: 1.02rem;
+  margin-bottom: 16px;
+}
+
+.module-points {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+
+.module-points li {
+  position: relative;
+  padding-left: 24px;
+  font-size: 0.94rem;
+  color: var(--ink);
+}
+
+.module-points li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--accent, var(--blue-600));
+  font-weight: 700;
+}
+
+.module-visual-card {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  background: linear-gradient(150deg, var(--accent-soft, var(--blue-050)) 0%, #fff 100%);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.module-visual-glyph {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 4rem;
+  color: var(--accent, var(--blue-600));
+  opacity: 0.28;
+}
+
+/* ── FAQ (FaqSection) ─────────────────────────────────────── */
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 780px;
+}
+
+.faq-item {
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 22px;
+  background: #fff;
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+  font-family: var(--font-display);
+  font-size: 1.02rem;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--accent, var(--blue-600));
+  transition: transform 0.2s ease;
+  flex: none;
+  margin-left: 16px;
+}
+
+.faq-item[open] summary::after {
+  transform: rotate(45deg);
+}
+
+.faq-item p {
+  margin-top: 14px;
+  color: var(--slate);
+  font-size: 0.98rem;
+}
+
+@media (max-width: 780px) {
+  .module-row,
+  .module-row--reverse {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+
+  .module-row--reverse .module-text,
+  .module-row--reverse .module-visual {
+    order: initial;
+  }
+
+  .module-visual-card {
+    aspect-ratio: 16 / 9;
+  }
+
+  .stats-band {
+    padding: 28px 24px;
+  }
+}
