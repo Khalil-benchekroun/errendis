@@ -1577,3 +1577,268 @@ svg {
     padding: 28px 24px;
   }
 }
+
+/* ── Visuels de modules Dialya (DialyaVisuals) ────────────────
+   Palette fidèle au vrai prototype : petrol #0C2B30, teal
+   #12A5A0, IBM Plex Mono pour les valeurs.
+   ──────────────────────────────────────────────────────────── */
+
+.dvz-frame {
+  aspect-ratio: 4 / 3;
+  border-radius: 20px;
+  background: #F5F9F8;
+  border: 1px solid #E1EBE9;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: var(--font-plex), var(--font-body);
+  font-size: 12.5px;
+  color: #13282C;
+  overflow: hidden;
+}
+
+.dvz-patient {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.dvz-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #164750, #0C2B30);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+.dvz-patient-name {
+  font-weight: 700;
+  font-family: var(--font-display);
+}
+
+.dvz-patient-sub {
+  color: #5F7578;
+  font-size: 11px;
+  margin-top: 2px;
+}
+
+.dvz-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.dvz-tag {
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 10.5px;
+  font-weight: 600;
+}
+
+.dvz-tag--hemo { background: #FAEAEB; color: #9E2C31; }
+.dvz-tag--amber { background: #FBF2DD; color: #9A6B08; }
+.dvz-tag--green { background: #E4F4EC; color: #157A51; }
+
+.dvz-mini-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 7px 0;
+  border-top: 1px solid #E1EBE9;
+  font-size: 12px;
+}
+
+.dvz-mini-row:first-of-type {
+  border-top: none;
+}
+
+.dvz-mini-row b {
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+  color: #0B7E7A;
+}
+
+.dvz-alert-text {
+  color: #C13A40 !important;
+}
+
+.dvz-panel-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #0C2B30;
+  margin-bottom: 2px;
+}
+
+.dvz-signature {
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px dashed #B4D2CF;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  color: #157A51;
+  font-weight: 600;
+  font-size: 11.5px;
+}
+
+.dvz-signature .dvz-mono-sm {
+  color: #5F7578;
+  font-weight: 400;
+}
+
+.dvz-alert-box {
+  margin-top: auto;
+  background: #FAEAEB;
+  color: #9E2C31;
+  font-weight: 600;
+  font-size: 11px;
+  padding: 9px 12px;
+  border-radius: 9px;
+}
+
+.dvz-planning-head,
+.dvz-planning-row {
+  display: grid;
+  grid-template-columns: 40px repeat(3, 1fr);
+  gap: 6px;
+}
+
+.dvz-planning-head {
+  font-size: 10.5px;
+  font-weight: 600;
+  color: #5F7578;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.dvz-planning-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: #0B7E7A;
+  display: flex;
+  align-items: center;
+}
+
+.dvz-planning-cell {
+  background: #fff;
+  border: 1px solid #E1EBE9;
+  border-radius: 8px;
+  padding: 8px 6px;
+  font-size: 10.5px;
+  color: #8DA2A4;
+  text-align: center;
+}
+
+.dvz-planning-cell--busy {
+  background: #E1F2F0;
+  border-color: #B4D2CF;
+  color: #0B7E7A;
+  font-weight: 600;
+}
+
+.dvz-live-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-family: var(--font-display);
+  color: #C13A40;
+  font-size: 12.5px;
+}
+
+.dvz-dot-pulse {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #C13A40;
+  animation: dvz-pulse 1.6s infinite;
+}
+
+@keyframes dvz-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.35; }
+}
+
+.dvz-live-row {
+  display: grid;
+  grid-template-columns: 56px 1fr auto auto;
+  gap: 8px;
+  align-items: center;
+  padding: 7px 0;
+  border-top: 1px solid #E1EBE9;
+}
+
+.dvz-ref {
+  font-family: var(--font-mono), monospace;
+  font-weight: 600;
+  color: #0B7E7A;
+}
+
+.dvz-mono-sm {
+  font-family: var(--font-mono), monospace;
+  font-size: 11px;
+  color: #5F7578;
+}
+
+.dvz-chip {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 999px;
+}
+
+.dvz-chip--ok { background: #E4F4EC; color: #157A51; }
+.dvz-chip--pending { background: #FBF2DD; color: #9A6B08; }
+.dvz-chip--alert { background: #FAEAEB; color: #9E2C31; }
+
+.dvz-phone {
+  margin: auto;
+  width: 74%;
+  background: #0C2B30;
+  border-radius: 22px;
+  padding: 22px 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #fff;
+  position: relative;
+}
+
+.dvz-phone-notch {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 5px;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.dvz-phone-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.dvz-phone-card {
+  background: #164750;
+  border-radius: 12px;
+  padding: 10px 12px;
+  font-size: 11px;
+  color: #CFE2E0;
+}
+
+.dvz-phone-card b {
+  color: #4FD8D2;
+  font-family: var(--font-display);
+}

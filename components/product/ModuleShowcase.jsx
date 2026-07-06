@@ -1,4 +1,4 @@
-export default function ModuleShowcase({ modules }) {
+export default function ModuleShowcase({ modules, visuals }) {
   if (!modules?.length) return null;
 
   return (
@@ -10,30 +10,37 @@ export default function ModuleShowcase({ modules }) {
         </div>
 
         <div className="modules-zigzag">
-          {modules.map((mod, i) => (
-            <div
-              className={`module-row${i % 2 === 1 ? ' module-row--reverse' : ''}`}
-              key={mod.title}
-            >
-              <div className="module-text">
-                <span className="module-index">{String(i + 1).padStart(2, '0')}</span>
-                <h3>{mod.title}</h3>
-                <p>{mod.text}</p>
-                {mod.points && (
-                  <ul className="module-points">
-                    {mod.points.map((pt) => (
-                      <li key={pt}>{pt}</li>
-                    ))}
-                  </ul>
-                )}
-              </div>
-              <div className="module-visual">
-                <div className="module-visual-card">
-                  <span className="module-visual-glyph">{String(i + 1).padStart(2, '0')}</span>
+          {modules.map((mod, i) => {
+            const Visual = visuals?.[i];
+            return (
+              <div
+                className={`module-row${i % 2 === 1 ? ' module-row--reverse' : ''}`}
+                key={mod.title}
+              >
+                <div className="module-text">
+                  <span className="module-index">{String(i + 1).padStart(2, '0')}</span>
+                  <h3>{mod.title}</h3>
+                  <p>{mod.text}</p>
+                  {mod.points && (
+                    <ul className="module-points">
+                      {mod.points.map((pt) => (
+                        <li key={pt}>{pt}</li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+                <div className="module-visual">
+                  {Visual ? (
+                    <Visual />
+                  ) : (
+                    <div className="module-visual-card">
+                      <span className="module-visual-glyph">{String(i + 1).padStart(2, '0')}</span>
+                    </div>
+                  )}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

@@ -6,6 +6,7 @@ import ModuleShowcase from '@/components/product/ModuleShowcase';
 import TrustSection from '@/components/product/TrustSection';
 import FaqSection from '@/components/product/FaqSection';
 import CtaSection from '@/components/product/CtaSection';
+import { DIALYA_VISUALS } from '@/components/product/DialyaVisuals';
 
 const product = getProduct('dialya');
 
@@ -47,7 +48,7 @@ export default function DialyaPage() {
 
       <ProductHero product={product} />
       <StatsBand stats={product.stats} />
-      <ModuleShowcase modules={product.modules} />
+      <ModuleShowcase modules={product.modules} visuals={DIALYA_VISUALS} />
       <TrustSection product={product} />
       <FaqSection faqs={product.faqs} productName={product.name} />
       <CtaSection productName={product.name} />

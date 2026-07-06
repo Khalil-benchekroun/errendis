@@ -1,4 +1,4 @@
-import { Space_Grotesk, Inter, IBM_Plex_Mono } from 'next/font/google';
+import { Space_Grotesk, Inter, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './globals.css';
@@ -19,6 +19,13 @@ const plexMono = IBM_Plex_Mono({
   subsets: ['latin'],
   weight: ['400', '500', '600'],
   variable: '--font-mono',
+  display: 'swap',
+});
+
+const plexSans = IBM_Plex_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  variable: '--font-plex',
   display: 'swap',
 });
 
@@ -69,7 +76,7 @@ const organizationJsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="fr" className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable}`}>
+    <html lang="fr" className={`${spaceGrotesk.variable} ${inter.variable} ${plexMono.variable} ${plexSans.variable}`}>
       <body>
         <script
           type="application/ld+json"
