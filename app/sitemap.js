@@ -13,6 +13,11 @@ export default function sitemap() {
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
+    { url: `${base}/glossaire`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/comparer-produits`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/pourquoi-errendis`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/secteurs`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
+    { url: `${base}/plan-du-site`, lastModified: now, changeFrequency: 'monthly', priority: 0.3 },
     { url: `${base}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     { url: `${base}/confidentialite`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     ...products.map((p) => ({

@@ -40,6 +40,9 @@ export default function Header() {
               ))}
             </ul>
           </div>
+          <Link href="/recherche" className="nav-link" onClick={() => setOpen(false)} aria-label="Rechercher">
+            🔍
+          </Link>
           <Link href="/blog" className="nav-link" onClick={() => setOpen(false)}>
             Blog
           </Link>

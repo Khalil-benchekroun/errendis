@@ -1,6 +1,8 @@
 import Link from 'next/link';
 import { ProductIcon } from '@/components/logos';
 import ProductMockup from '@/components/ProductMockup';
+import DemoTimer from './DemoTimer';
+import ComplianceBadges from './ComplianceBadges';
 
 export default function ProductHero({ product }) {
   return (
@@ -20,7 +22,10 @@ export default function ProductHero({ product }) {
           <Link href="/contact" className="btn btn--primary">
             Demander une démo de {product.name}
           </Link>
+          <DemoTimer />
         </div>
+
+        <ComplianceBadges />
 
         <div className="product-shot">
           <ProductMockup slug={product.slug} name={product.name} />
