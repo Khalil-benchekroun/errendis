@@ -4,7 +4,6 @@ import { Resend } from 'resend';
 // (Project Settings → Environment Variables), obtenue sur resend.com.
 // Le domaine d'envoi (ex: errendis.com) doit être vérifié dans Resend
 // pour pouvoir envoyer "from" une adresse @errendis.com.
-const resend = new Resend(process.env.RESEND_API_KEY);
 
 const DESTINATION_EMAIL = 'contact@errendis.com';
 
@@ -18,6 +17,17 @@ export async function POST(request) {
         { status: 400 }
       );
     }
+
+    if (!process.env.RESEND_API_KEY) {
+      console.error('RESEND_API_KEY manquante — configure-la sur Vercel (Settings → Environment Variables).');
+      return Response.json(
+        { error: 'Le formulaire n\u2019est pas encore configuré. Merci de nous écrire directement sur WhatsApp ou par email.' },
+        { status: 500 }
+      );
+    }
+
+    // Instancié ici (pas au chargement du module) pour ne jamais bloquer le build.
+    const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
       from: 'Errendis — Site web <site@errendis.com>',
