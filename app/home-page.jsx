@@ -200,6 +200,42 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── COORDONNÉES ──────────────────────────────────── */}
+      <section className="section" style={{ paddingTop: 0 }}>
+        <div className="container">
+          <div className="contact-band">
+            <div>
+              <span className="section-eyebrow">Nous contacter</span>
+              <h2>Une question ? Parlons-en directement.</h2>
+            </div>
+            <div className="contact-band-grid">
+              <a href="tel:+212684637854" className="contact-band-item">
+                <span className="lbl">Téléphone</span>
+                <span className="val">+212 684 637 854</span>
+              </a>
+              <a
+                href="https://wa.me/212617489723"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contact-band-item"
+              >
+                <span className="lbl">WhatsApp</span>
+                <span className="val">+212 617 489 723</span>
+                <span className="val">+33 7 69 76 01 74</span>
+              </a>
+              <a href="mailto:contact@errendis.com" className="contact-band-item">
+                <span className="lbl">Email</span>
+                <span className="val">contact@errendis.com</span>
+              </a>
+              <a href="https://www.errendis.com" className="contact-band-item">
+                <span className="lbl">Site internet</span>
+                <span className="val">www.errendis.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </>
   );
 }

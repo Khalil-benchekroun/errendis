@@ -1,12 +1,13 @@
+import ContactForm from '@/components/ContactForm';
+
 export const metadata = {
   title: 'Contact & démonstration',
   description:
-    'Contactez Errendis pour une démonstration gratuite de nos logiciels métiers : par WhatsApp, email ou téléphone.',
+    'Contactez Errendis pour une démonstration gratuite de nos logiciels métiers : par WhatsApp, email, téléphone ou formulaire.',
   alternates: { canonical: '/contact' },
 };
 
-// ⚠️ À PERSONNALISER : remplace ces deux constantes par tes vraies coordonnées.
-const WHATSAPP_NUMBER = '212600000000'; // format international sans le +
+const WHATSAPP_NUMBER = '212617489723';
 const CONTACT_EMAIL = 'contact@errendis.com';
 
 export default function ContactPage() {
@@ -27,15 +28,12 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="section">
+      <section className="section" style={{ paddingBottom: 0 }}>
         <div className="container">
           <div className="contact-grid">
             <div className="contact-card">
               <h3>WhatsApp</h3>
-              <p>
-                Le plus rapide : écrivez-nous et recevez une réponse dans la
-                journée.
-              </p>
+              <p>Le plus rapide : écrivez-nous et recevez une réponse dans la journée.</p>
               <a
                 href={whatsappLink}
                 className="btn btn--primary"
@@ -47,27 +45,32 @@ export default function ContactPage() {
             </div>
 
             <div className="contact-card">
-              <h3>Email</h3>
-              <p>
-                Décrivez votre activité et vos besoins, nous revenons vers
-                vous avec un créneau de démonstration.
-              </p>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn--ghost">
-                {CONTACT_EMAIL}
+              <h3>Téléphone</h3>
+              <p>Pour un échange direct avec notre équipe.</p>
+              <a href="tel:+212684637854" className="btn btn--ghost">
+                +212 684 637 854
               </a>
             </div>
 
             <div className="contact-card">
-              <h3>Démo guidée</h3>
-              <p>
-                Vous préférez voir le logiciel sur vos propres cas ? Nous
-                préparons la démonstration avec vos exemples réels.
-              </p>
-              <a href={`mailto:${CONTACT_EMAIL}?subject=Demande de démo`} className="btn btn--ghost">
-                Réserver une démo
+              <h3>Email</h3>
+              <p>Décrivez votre activité et vos besoins, nous revenons vers vous rapidement.</p>
+              <a href={`mailto:${CONTACT_EMAIL}`} className="btn btn--ghost">
+                {CONTACT_EMAIL}
               </a>
             </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <div className="section-head">
+            <span className="section-eyebrow">Formulaire</span>
+            <h2>Ou écrivez-nous directement ici</h2>
+            <p>Votre message nous arrive immédiatement par email — nous répondons sous 24h ouvrées.</p>
+          </div>
+          <ContactForm />
         </div>
       </section>
     </>

@@ -3,10 +3,10 @@ import { PRODUCT_THEME as THEME } from '@/components/logos';
 import ProductHero from '@/components/product/ProductHero';
 import StatsBand from '@/components/product/StatsBand';
 import ModuleShowcase from '@/components/product/ModuleShowcase';
+import PatientAppSection from '@/components/product/PatientAppSection';
 import TrustSection from '@/components/product/TrustSection';
 import FaqSection from '@/components/product/FaqSection';
 import CtaSection from '@/components/product/CtaSection';
-import { DIALYA_VISUALS } from '@/components/product/DialyaVisuals';
 
 const product = getProduct('dialya');
 
@@ -47,8 +47,20 @@ export default function DialyaPage() {
       />
 
       <ProductHero product={product} />
+
+      <section className="section" style={{ paddingBottom: 0 }}>
+        <div className="container">
+          <div className="prose" style={{ maxWidth: 820 }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--slate)' }}>
+              {product.longDescription}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <StatsBand stats={product.stats} />
-      <ModuleShowcase modules={product.modules} visuals={DIALYA_VISUALS} />
+      <ModuleShowcase modules={product.modules} />
+      <PatientAppSection app={product.patientApp} />
       <TrustSection product={product} />
       <FaqSection faqs={product.faqs} productName={product.name} />
       <CtaSection productName={product.name} />
