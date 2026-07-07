@@ -42,6 +42,10 @@ export default function Footer() {
 
       <div className="container footer-bottom">
         <p>© {new Date().getFullYear()} Errendis. Tous droits réservés.</p>
+        <div style={{ display: 'flex', gap: 20 }}>
+          <Link href="/mentions-legales">Mentions légales</Link>
+          <Link href="/confidentialite">Confidentialité</Link>
+        </div>
         <p>Mohammedia · Maroc</p>
       </div>
     </footer>

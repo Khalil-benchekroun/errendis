@@ -2235,3 +2235,12 @@ svg {
     grid-template-columns: 1fr;
   }
 }
+
+.footer-bottom a {
+  color: var(--slate-light);
+  transition: color 0.15s ease;
+}
+
+.footer-bottom a:hover {
+  color: #fff;
+}
