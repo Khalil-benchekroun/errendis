@@ -30,7 +30,20 @@ export default function ModuleShowcase({ modules, visuals }) {
                   )}
                 </div>
                 <div className="module-visual">
-                  {Visual ? (
+                  {mod.image ? (
+                    <div className="module-shot-frame">
+                      <div className="module-shot-bar">
+                        <span />
+                        <span />
+                        <span />
+                      </div>
+                      <img
+                        src={mod.image}
+                        alt={`Capture d'écran — ${mod.title}`}
+                        loading="lazy"
+                      />
+                    </div>
+                  ) : Visual ? (
                     <Visual />
                   ) : (
                     <div className="module-visual-card">
