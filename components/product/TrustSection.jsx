@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function TrustSection({ product }) {
   return (
-    <section className="section section--alt">
+    <section id="confiance" className="section section--alt">
       <div className="container">
         <div className="why-grid">
           <div className="why-item">

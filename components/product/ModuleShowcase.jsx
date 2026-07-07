@@ -2,7 +2,7 @@ export default function ModuleShowcase({ modules, visuals }) {
   if (!modules?.length) return null;
 
   return (
-    <section className="section section--alt">
+    <section id="modules" className="section section--alt">
       <div className="container">
         <div className="section-head">
           <span className="section-eyebrow">Modules</span>

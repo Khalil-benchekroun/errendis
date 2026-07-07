@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { products } from '@/lib/products';
 import ProductMockup from '@/components/ProductMockup';
 import { ProductIcon } from '@/components/logos';
+import Reveal from '@/components/Reveal';
 
 export const metadata = {
   title: 'Errendis — Des logiciels métiers qui mettent de l\u2019ordre dans vos opérations',
@@ -75,20 +76,21 @@ export default function HomePage() {
           </div>
 
           <div className="products-grid">
-            {products.map((p) => (
-              <Link
-                key={p.slug}
-                href={`/produits/${p.slug}`}
-                className="product-card"
-              >
-                <div className="product-icon-wrap">
-                  <ProductIcon slug={p.slug} size={40} />
-                </div>
-                <h3>{p.name}</h3>
-                <div className="product-sector">{p.sector}</div>
-                <p>{p.tagline}</p>
-                <span className="product-more">Découvrir {p.name} →</span>
-              </Link>
+            {products.map((p, i) => (
+              <Reveal key={p.slug} delay={i * 60}>
+                <Link
+                  href={`/produits/${p.slug}`}
+                  className="product-card"
+                >
+                  <div className="product-icon-wrap">
+                    <ProductIcon slug={p.slug} size={40} />
+                  </div>
+                  <h3>{p.name}</h3>
+                  <div className="product-sector">{p.sector}</div>
+                  <p>{p.tagline}</p>
+                  <span className="product-more">Découvrir {p.name} →</span>
+                </Link>
+              </Reveal>
             ))}
           </div>
         </div>
@@ -102,6 +104,7 @@ export default function HomePage() {
             <h2>Pensé pour les entreprises marocaines. Construit aux standards internationaux.</h2>
           </div>
 
+          <Reveal>
           <div className="why-grid">
             <div className="why-item">
               <h3>
@@ -140,6 +143,7 @@ export default function HomePage() {
               </p>
             </div>
           </div>
+          </Reveal>
         </div>
       </section>
 

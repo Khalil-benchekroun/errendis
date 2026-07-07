@@ -7,6 +7,8 @@ import PatientAppSection from '@/components/product/PatientAppSection';
 import TrustSection from '@/components/product/TrustSection';
 import FaqSection from '@/components/product/FaqSection';
 import CtaSection from '@/components/product/CtaSection';
+import ProductLoader from '@/components/product/ProductLoader';
+import ProductAnchors from '@/components/product/ProductAnchors';
 
 const product = getProduct('logistara');
 
@@ -48,6 +50,8 @@ export default function LogistaraPage() {
 
   return (
     <div className="product-theme" style={themeStyle}>
+      <ProductLoader slug={product.slug} />
+      <ProductAnchors />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}

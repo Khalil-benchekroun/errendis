@@ -2,7 +2,7 @@ export default function PatientAppSection({ app }) {
   if (!app) return null;
 
   return (
-    <section className="section patient-app">
+    <section id="app-dediee" className="section patient-app">
       <div className="container">
         <div className="patient-app-grid">
           <div className="patient-app-text">
