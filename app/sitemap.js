@@ -1,4 +1,5 @@
 import { products } from '@/lib/products';
+import { posts } from '@/lib/blog';
 
 export const dynamic = 'force-static';
 
@@ -10,6 +11,8 @@ export default function sitemap() {
     { url: base, lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: `${base}/a-propos`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: `${base}/contact`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/faq`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/blog`, lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
     { url: `${base}/mentions-legales`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     { url: `${base}/confidentialite`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     ...products.map((p) => ({
@@ -17,6 +20,12 @@ export default function sitemap() {
       lastModified: now,
       changeFrequency: 'weekly',
       priority: 0.9,
+    })),
+    ...posts.map((p) => ({
+      url: `${base}/blog/${p.slug}`,
+      lastModified: p.date,
+      changeFrequency: 'monthly',
+      priority: 0.6,
     })),
   ];
 }

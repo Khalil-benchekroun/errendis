@@ -40,6 +40,9 @@ export default function Header() {
               ))}
             </ul>
           </div>
+          <Link href="/blog" className="nav-link" onClick={() => setOpen(false)}>
+            Blog
+          </Link>
           <Link href="/a-propos" className="nav-link" onClick={() => setOpen(false)}>
             À propos
           </Link>
