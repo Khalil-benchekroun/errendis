@@ -28,13 +28,31 @@ export default function Footer() {
         </div>
 
         <div>
+          <h3 className="footer-title">Ressources</h3>
+          <ul className="footer-list">
+            <li>
+              <Link href="/comparer-produits">Comparer nos produits</Link>
+            </li>
+            <li>
+              <Link href="/pourquoi-errendis">Pourquoi Errendis</Link>
+            </li>
+            <li>
+              <Link href="/secteurs">Vos difficultés par secteur</Link>
+            </li>
+            <li>
+              <Link href="/glossaire">Glossaire métier</Link>
+            </li>
+            <li>
+              <Link href="/blog">Blog</Link>
+            </li>
+          </ul>
+        </div>
+
+        <div>
           <h3 className="footer-title">Errendis</h3>
           <ul className="footer-list">
             <li>
               <Link href="/a-propos">À propos</Link>
-            </li>
-            <li>
-              <Link href="/blog">Blog</Link>
             </li>
             <li>
               <Link href="/faq">Questions fréquentes</Link>

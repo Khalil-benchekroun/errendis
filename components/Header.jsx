@@ -40,11 +40,49 @@ export default function Header() {
               ))}
             </ul>
           </div>
+          <div className="nav-group">
+            <span className="nav-group-label">Ressources</span>
+            <ul className="nav-products nav-resources">
+              <li>
+                <Link href="/comparer-produits" onClick={() => setOpen(false)}>
+                  <strong>Comparer nos produits</strong>
+                  <span>Nos 5 logiciels côte à côte</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/pourquoi-errendis" onClick={() => setOpen(false)}>
+                  <strong>Pourquoi Errendis</strong>
+                  <span>Excel, ERP générique ou logiciel métier</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/secteurs" onClick={() => setOpen(false)}>
+                  <strong>Vos difficultés par secteur</strong>
+                  <span>Les blocages typiques par métier</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/glossaire" onClick={() => setOpen(false)}>
+                  <strong>Glossaire métier</strong>
+                  <span>AMO, FEFO, HL7, FCL/LCL...</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" onClick={() => setOpen(false)}>
+                  <strong>Blog</strong>
+                  <span>Guides et bonnes pratiques</span>
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" onClick={() => setOpen(false)}>
+                  <strong>Questions fréquentes</strong>
+                  <span>Mise en service, support, tarifs</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
           <Link href="/recherche" className="nav-link" onClick={() => setOpen(false)} aria-label="Rechercher">
             🔍
-          </Link>
-          <Link href="/blog" className="nav-link" onClick={() => setOpen(false)}>
-            Blog
           </Link>
           <Link href="/a-propos" className="nav-link" onClick={() => setOpen(false)}>
             À propos
