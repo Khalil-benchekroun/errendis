@@ -1,9 +1,10 @@
-import { Resend } from 'resend';
+import nodemailer from 'nodemailer';
 
-// ⚠️ Nécessite une variable d'environnement RESEND_API_KEY sur Vercel
-// (Project Settings → Environment Variables), obtenue sur resend.com.
-// Le domaine d'envoi (ex: errendis.com) doit être vérifié dans Resend
-// pour pouvoir envoyer "from" une adresse @errendis.com.
+// ⚠️ Nécessite 2 variables d'environnement sur Vercel (Settings → Environment Variables) :
+//   OVH_SMTP_USER = contact@errendis.com  (ta boîte mail OVH complète)
+//   OVH_SMTP_PASS = le mot de passe de cette boîte mail
+//
+// Serveur SMTP OVH standard : smtp.mail.ovh.net, port 587 (STARTTLS).
 
 const DESTINATION_EMAIL = 'contact@errendis.com';
 
@@ -18,8 +19,8 @@ export async function POST(request) {
       );
     }
 
-    if (!process.env.RESEND_API_KEY) {
-      console.error('RESEND_API_KEY manquante — configure-la sur Vercel (Settings → Environment Variables).');
+    if (!process.env.OVH_SMTP_USER || !process.env.OVH_SMTP_PASS) {
+      console.error('OVH_SMTP_USER / OVH_SMTP_PASS manquantes — configure-les sur Vercel (Settings → Environment Variables).');
       return Response.json(
         { error: 'Le formulaire n\u2019est pas encore configuré. Merci de nous écrire directement sur WhatsApp ou par email.' },
         { status: 500 }
@@ -27,10 +28,18 @@ export async function POST(request) {
     }
 
     // Instancié ici (pas au chargement du module) pour ne jamais bloquer le build.
-    const resend = new Resend(process.env.RESEND_API_KEY);
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.mail.ovh.net',
+      port: 587,
+      secure: false, // STARTTLS sur le port 587
+      auth: {
+        user: process.env.OVH_SMTP_USER,
+        pass: process.env.OVH_SMTP_PASS,
+      },
+    });
 
-    await resend.emails.send({
-      from: 'Errendis — Site web <site@errendis.com>',
+    await transporter.sendMail({
+      from: `"Errendis — Site web" <${process.env.OVH_SMTP_USER}>`,
       to: DESTINATION_EMAIL,
       replyTo: email,
       subject: `Nouvelle demande depuis errendis.com${product ? ` — ${product}` : ''}`,
