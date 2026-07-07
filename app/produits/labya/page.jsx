@@ -18,6 +18,13 @@ export const metadata = {
     description: product.seoDescription,
     url: '/produits/labya',
   },
+  icons: {
+    icon: [
+      { url: '/favicons/labya-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/labya-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicons/labya-apple.png',
+  },
 };
 
 export default function LabyaPage() {

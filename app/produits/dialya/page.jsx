@@ -19,6 +19,13 @@ export const metadata = {
     description: product.seoDescription,
     url: '/produits/dialya',
   },
+  icons: {
+    icon: [
+      { url: '/favicons/dialya-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/dialya-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicons/dialya-apple.png',
+  },
 };
 
 export default function DialyaPage() {

@@ -18,6 +18,13 @@ export const metadata = {
     description: product.seoDescription,
     url: '/produits/rentara',
   },
+  icons: {
+    icon: [
+      { url: '/favicons/rentara-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/rentara-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicons/rentara-apple.png',
+  },
 };
 
 export default function RentaraPage() {

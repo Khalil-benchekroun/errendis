@@ -19,6 +19,13 @@ export const metadata = {
     description: product.seoDescription,
     url: '/produits/logistara',
   },
+  icons: {
+    icon: [
+      { url: '/favicons/logistara-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/logistara-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicons/logistara-apple.png',
+  },
 };
 
 export default function LogistaraPage() {

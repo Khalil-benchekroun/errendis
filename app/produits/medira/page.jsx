@@ -19,6 +19,13 @@ export const metadata = {
     description: product.seoDescription,
     url: '/produits/medira',
   },
+  icons: {
+    icon: [
+      { url: '/favicons/medira-16.png', sizes: '16x16', type: 'image/png' },
+      { url: '/favicons/medira-32.png', sizes: '32x32', type: 'image/png' },
+    ],
+    apple: '/favicons/medira-apple.png',
+  },
 };
 
 export default function MediraPage() {
