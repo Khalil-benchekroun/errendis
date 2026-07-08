@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
 import ChatbotWidget from '@/components/ChatbotWidget';
+import PageTransition from '@/components/PageTransition';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -137,7 +138,9 @@ export default function RootLayout({ children }) {
           Aller au contenu principal
         </a>
         <Header />
-        <main id="main-content">{children}</main>
+        <main id="main-content">
+          <PageTransition>{children}</PageTransition>
+        </main>
         <Footer />
         <WhatsAppFloat />
         <ChatbotWidget />

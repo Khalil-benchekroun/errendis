@@ -6,6 +6,7 @@ import Reveal from '@/components/Reveal';
 import TiltCard from '@/components/TiltCard';
 import CursorGlow from '@/components/CursorGlow';
 import MaskTitle from '@/components/MaskTitle';
+import Hero3DLogo from '@/components/Hero3DLogo';
 
 export const metadata = {
   title: 'Errendis — Des logiciels métiers qui mettent de l\u2019ordre dans vos opérations',
@@ -39,6 +40,7 @@ export default function HomePage() {
         <CursorGlow />
         <div className="container hero-grid">
           <div className="hero-inner">
+            <Hero3DLogo size={100} />
             <span className="hero-eyebrow">Éditeur de logiciels métiers · Maroc</span>
             <h1>
               Des logiciels qui mettent de l&apos;<em>ordre</em> dans vos opérations.

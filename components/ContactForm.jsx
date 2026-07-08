@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { fireConfetti } from './confetti';
 
 export default function ContactForm({ product }) {
   const [status, setStatus] = useState('idle'); // idle | sending | success | error
@@ -33,6 +34,7 @@ export default function ContactForm({ product }) {
       }
 
       setStatus('success');
+      fireConfetti();
       form.reset();
     } catch (err) {
       setStatus('error');

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { products } from '@/lib/products';
 import { ProductIcon } from '@/components/logos';
+import Reveal from '@/components/Reveal';
 
 const SITE_URL = 'https://errendis.com';
 
@@ -145,26 +146,60 @@ export default function AboutPage() {
             <span className="section-eyebrow">Notre histoire</span>
             <h2>Une même histoire, racontée par plusieurs secteurs différents</h2>
           </div>
-          <div className="about-lead">
-            <p>
-              Errendis n’est pas parti d’une idée unique, mais d’une
-              répétition. En accompagnant des entreprises de secteurs très
-              différents — un centre de soins, un distributeur, une
-              agence, un transitaire — la même scène revenait : une équipe
-              compétente, un métier exigeant, et des outils inadaptés. Un
-              tableur qui craque, un cahier qui se perd, un groupe
-              WhatsApp qui remplace un vrai système de suivi. Chaque fois,
-              la solution générique du marché ratait quelque chose
-              d’essentiel au métier.
-            </p>
-            <p style={{ marginTop: 18 }}>
-              De ce constat répété est née une conviction, puis une
-              méthode : construire, secteur par secteur, le logiciel que
-              chaque métier aurait dû avoir depuis le début. Dialya,
-              Medira, Logistara, Labya, Rentara, et les prochains à
-              venir — chaque produit Errendis raconte cette même histoire,
-              une fois de plus, pour un métier différent.
-            </p>
+
+          <div className="history-timeline">
+            <Reveal className="history-step">
+              <span className="history-dot" />
+              <div className="history-content">
+                <span className="history-year">Le constat</span>
+                <p>
+                  Errendis n’est pas parti d’une idée unique, mais d’une
+                  répétition. En accompagnant des entreprises de secteurs
+                  très différents — un centre de soins, un distributeur,
+                  une agence, un transitaire — la même scène revenait :
+                  une équipe compétente, un métier exigeant, et des
+                  outils inadaptés.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal className="history-step" delay={100}>
+              <span className="history-dot" />
+              <div className="history-content">
+                <span className="history-year">Le symptôme</span>
+                <p>
+                  Un tableur qui craque, un cahier qui se perd, un groupe
+                  WhatsApp qui remplace un vrai système de suivi. Chaque
+                  fois, la solution générique du marché ratait quelque
+                  chose d’essentiel au métier.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal className="history-step" delay={200}>
+              <span className="history-dot" />
+              <div className="history-content">
+                <span className="history-year">La conviction</span>
+                <p>
+                  De ce constat répété est née une conviction, puis une
+                  méthode : construire, secteur par secteur, le logiciel
+                  que chaque métier aurait dû avoir depuis le début.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal className="history-step" delay={300}>
+              <span className="history-dot history-dot--active" />
+              <div className="history-content">
+                <span className="history-year">La gamme aujourd’hui</span>
+                <p>
+                  Dialya, Medira, Logistara, Labya, Rentara, et les
+                  prochains à venir — chaque produit Errendis raconte
+                  cette même histoire, une fois de plus, pour un métier
+                  différent.
+                </p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>

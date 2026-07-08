@@ -3280,3 +3280,232 @@ svg {
     height: 60vh;
   }
 }
+
+/* ══════════════════════════════════════════════════════════
+   LOT 9 — 3D léger, illustrations isométriques, storytelling,
+   radar, confettis, transitions de page
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Logo 3D (Three.js, home uniquement) ──────────────────── */
+
+.hero3d-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 220px;
+}
+
+.logo3d-mount {
+  width: 100%;
+  height: 100%;
+}
+
+.logo3d-mount canvas {
+  display: block;
+}
+
+/* ── Illustrations isométriques (page secteurs) ───────────── */
+
+.sector-card--iso {
+  flex-direction: row;
+  align-items: center;
+  gap: 26px;
+}
+
+.sector-card-illustration {
+  flex: none;
+  width: 150px;
+}
+
+.iso-illustration {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 18px rgba(15, 23, 42, 0.1));
+}
+
+.sector-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+@media (max-width: 700px) {
+  .sector-card--iso {
+    flex-direction: column;
+  }
+
+  .sector-card-illustration {
+    width: 120px;
+  }
+}
+
+/* ── Timeline "Notre histoire" ─────────────────────────────── */
+
+.history-timeline {
+  position: relative;
+  max-width: 720px;
+  padding-left: 32px;
+}
+
+.history-timeline::before {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: linear-gradient(180deg, var(--blue-200, #bfdbfe), var(--blue-600));
+}
+
+.history-step {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  padding-bottom: 34px;
+}
+
+.history-step:last-child {
+  padding-bottom: 0;
+}
+
+.history-dot {
+  position: absolute;
+  left: -32px;
+  top: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--blue-400, #60a5fa);
+}
+
+.history-dot--active {
+  border-color: var(--blue-600);
+  background: var(--blue-600);
+  box-shadow: 0 0 0 5px var(--blue-100);
+}
+
+.history-year {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--blue-700);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
+
+.history-content p {
+  color: var(--slate);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+/* ── Radar chart ───────────────────────────────────────────── */
+
+.radar-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.radar-chart {
+  width: 100%;
+  max-width: 460px;
+  height: auto;
+}
+
+.radar-label {
+  font-size: 9px;
+  fill: var(--slate);
+  font-family: var(--font-body);
+  font-weight: 600;
+}
+
+.radar-path {
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  transition: stroke-dashoffset 1.1s cubic-bezier(0.22, 1, 0.36, 1), fill-opacity 1.1s ease;
+}
+
+.radar-path--shown {
+  stroke-dashoffset: 0;
+}
+
+.radar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+}
+
+.radar-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.82rem;
+  color: var(--slate);
+  font-weight: 600;
+}
+
+.radar-legend-item i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+/* ── Transition de page ───────────────────────────────────── */
+
+.page-transition {
+  animation: page-enter 0.35s ease both;
+}
+
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-transition {
+    animation: none;
+  }
+}
+
+/* ── Ken Burns léger sur les captures dans les cartes ──────── */
+
+.module-shot-frame img {
+  transition: transform 6s ease;
+}
+
+.module-shot-frame:hover img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-shot-frame img {
+    transition: none;
+  }
+  .module-shot-frame:hover img {
+    transform: none;
+  }
+}
+
+/* ── Icônes produits glassmorphism (home) ─────────────────── */
+
+.product-icon-wrap {
+  display: inline-flex;
+  padding: 12px;
+  border-radius: 16px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.7), rgba(239, 246, 255, 0.4));
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
+}

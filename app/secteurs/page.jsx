@@ -1,6 +1,15 @@
 import Link from 'next/link';
 import { products } from '@/lib/products';
 import { ProductIcon } from '@/components/logos';
+import { IsoLab, IsoDialysis, IsoDistribution, IsoRental, IsoLogistics } from '@/components/IsoIllustrations';
+
+const ISO_MAP = {
+  labya: IsoLab,
+  dialya: IsoDialysis,
+  medira: IsoDistribution,
+  rentara: IsoRental,
+  logistara: IsoLogistics,
+};
 
 export const metadata = {
   title: 'Vos difficultés par secteur',
@@ -53,25 +62,31 @@ export default function SecteursPage() {
       <section className="section">
         <div className="container">
           <div className="sector-list">
-            {products.map((p) => (
-              <div className="sector-card" key={p.slug}>
-                <div className="sector-card-head">
-                  <ProductIcon slug={p.slug} size={36} />
-                  <div>
-                    <strong>{p.sector}</strong>
-                    <span>Solution : {p.name}</span>
+            {products.map((p) => {
+              const Iso = ISO_MAP[p.slug];
+              return (
+                <div className="sector-card sector-card--iso" key={p.slug}>
+                  <div className="sector-card-illustration">{Iso && <Iso />}</div>
+                  <div className="sector-card-body">
+                    <div className="sector-card-head">
+                      <ProductIcon slug={p.slug} size={36} />
+                      <div>
+                        <strong>{p.sector}</strong>
+                        <span>Solution : {p.name}</span>
+                      </div>
+                    </div>
+                    <ul className="sector-pains">
+                      {(PAIN_POINTS[p.slug] || []).map((pain) => (
+                        <li key={pain}>{pain}</li>
+                      ))}
+                    </ul>
+                    <Link href={`/produits/${p.slug}`} className="btn btn--ghost" style={{ alignSelf: 'flex-start' }}>
+                      Découvrir {p.name} →
+                    </Link>
                   </div>
                 </div>
-                <ul className="sector-pains">
-                  {(PAIN_POINTS[p.slug] || []).map((pain) => (
-                    <li key={pain}>{pain}</li>
-                  ))}
-                </ul>
-                <Link href={`/produits/${p.slug}`} className="btn btn--ghost" style={{ alignSelf: 'flex-start' }}>
-                  Découvrir {p.name} →
-                </Link>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

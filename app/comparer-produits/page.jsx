@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { products } from '@/lib/products';
 import { ProductIcon } from '@/components/logos';
+import RadarChart from '@/components/RadarChart';
 
 export const metadata = {
   title: 'Comparer nos produits',
@@ -64,6 +65,21 @@ export default function ComparerProduitsPage() {
             <Link href="/contact">Contactez-nous</Link> — c’est peut-être
             le prochain logiciel que nous construirons.
           </div>
+        </div>
+      </section>
+
+      <section className="section section--alt">
+        <div className="container">
+          <div className="section-head">
+            <span className="section-eyebrow">Vue d'ensemble</span>
+            <h2>Profil de richesse fonctionnelle par produit</h2>
+            <p>
+              Un aperçu indicatif — reflet du nombre de modules et de la
+              maturité actuelle de chaque prototype, pas une notation
+              marketing.
+            </p>
+          </div>
+          <RadarChart />
         </div>
       </section>
     </>
