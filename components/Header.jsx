@@ -84,12 +84,11 @@ export default function Header() {
           </div>
           <div className="nav-group">
             <span className="nav-group-label">Services</span>
-            <ul className="nav-products">
+            <ul className="nav-products nav-products--compact">
               {services.map((s) => (
                 <li key={s.slug}>
                   <Link href={`/services/${s.slug}`} onClick={() => setOpen(false)}>
                     <strong>{s.shortName}</strong>
-                    <span>{s.tagline}</span>
                   </Link>
                 </li>
               ))}
