@@ -3,10 +3,11 @@ import { PRODUCT_THEME as THEME } from '@/components/logos';
 import ProductHero from '@/components/product/ProductHero';
 import StatsBand from '@/components/product/StatsBand';
 import ModuleShowcase from '@/components/product/ModuleShowcase';
+import PatientAppSection from '@/components/product/PatientAppSection';
 import TrustSection from '@/components/product/TrustSection';
 import FaqSection from '@/components/product/FaqSection';
-import CtaSection from '@/components/product/CtaSection';
 import RelatedProducts from '@/components/product/RelatedProducts';
+import CtaSection from '@/components/product/CtaSection';
 import ProductLoader from '@/components/product/ProductLoader';
 import ProductAnchors from '@/components/product/ProductAnchors';
 
@@ -67,6 +68,16 @@ export default function RentaraPage() {
     ],
   };
 
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: product.faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  };
+
   return (
     <div className="product-theme" style={themeStyle}>
       <ProductLoader slug={product.slug} />
@@ -79,10 +90,26 @@ export default function RentaraPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       <ProductHero product={product} />
+
+      <section className="section" style={{ paddingBottom: 0 }}>
+        <div className="container">
+          <div className="prose" style={{ maxWidth: 820 }}>
+            <p style={{ fontSize: '1.05rem', color: 'var(--slate)' }}>
+              {product.pitch}
+            </p>
+          </div>
+        </div>
+      </section>
+
       <StatsBand stats={product.stats} />
       <ModuleShowcase modules={product.modules} />
+      <PatientAppSection app={product.patientApp} />
       <TrustSection product={product} />
       <FaqSection faqs={product.faqs} productName={product.name} />
       <RelatedProducts slugs={product.related} />
