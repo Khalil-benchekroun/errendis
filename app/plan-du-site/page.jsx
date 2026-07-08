@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { products } from '@/lib/products';
+import { services } from '@/lib/services';
 import { posts } from '@/lib/blog';
 
 export const metadata = {
@@ -38,6 +39,18 @@ export default function SitemapHtmlPage() {
                 {products.map((p) => (
                   <li key={p.slug}>
                     <Link href={`/produits/${p.slug}`}>{p.name} — {p.sector}</Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="sitemap-col">
+              <h3>Services</h3>
+              <ul>
+                <li><Link href="/services">Tous nos services</Link></li>
+                {services.map((s) => (
+                  <li key={s.slug}>
+                    <Link href={`/services/${s.slug}`}>{s.shortName}</Link>
                   </li>
                 ))}
               </ul>

@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import Logo from './Logo';
 import { products } from '@/lib/products';
+import { services } from '@/lib/services';
 
 export default function Footer() {
   return (
@@ -22,6 +23,17 @@ export default function Footer() {
                 <Link href={`/produits/${p.slug}`}>
                   {p.name} — {p.sector}
                 </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div>
+          <h3 className="footer-title">Services</h3>
+          <ul className="footer-list">
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/services/${s.slug}`}>{s.shortName}</Link>
               </li>
             ))}
           </ul>

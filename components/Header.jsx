@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Logo from './Logo';
 import { products } from '@/lib/products';
+import { services } from '@/lib/services';
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -79,6 +80,19 @@ export default function Header() {
                   <span>Mise en service, support, tarifs</span>
                 </Link>
               </li>
+            </ul>
+          </div>
+          <div className="nav-group">
+            <span className="nav-group-label">Services</span>
+            <ul className="nav-products">
+              {services.map((s) => (
+                <li key={s.slug}>
+                  <Link href={`/services/${s.slug}`} onClick={() => setOpen(false)}>
+                    <strong>{s.shortName}</strong>
+                    <span>{s.tagline}</span>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
           <div className="nav-group">
