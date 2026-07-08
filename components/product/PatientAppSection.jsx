@@ -35,7 +35,7 @@ export default function PatientAppSection({ app }) {
                 <span />
                 <span />
               </div>
-              <img src={app.image} alt="Application mobile patient" loading="lazy" />
+              <img src={app.image} alt="Application mobile patient" loading="lazy" width="1600" height="1000" />
             </div>
           </div>
         </div>

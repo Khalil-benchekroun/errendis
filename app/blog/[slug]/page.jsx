@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { posts, getPost } from '@/lib/blog';
 import { products } from '@/lib/products';
 import { ProductIcon } from '@/components/logos';
+import ReadingProgress from '@/components/ReadingProgress';
 
 export function generateStaticParams() {
   return posts.map((p) => ({ slug: p.slug }));
@@ -46,16 +47,32 @@ export default async function BlogPostPage({ params }) {
     '@type': 'BlogPosting',
     headline: post.title,
     datePublished: post.date,
+    dateModified: post.date,
     author: { '@type': 'Organization', name: 'Errendis' },
     publisher: { '@type': 'Organization', name: 'Errendis' },
     description: post.seoDescription,
   };
 
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://errendis.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Blog', item: 'https://errendis.com/blog' },
+      { '@type': 'ListItem', position: 3, name: post.title, item: `https://errendis.com/blog/${post.slug}` },
+    ],
+  };
+
   return (
     <>
+      <ReadingProgress />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
 
       <section className="page-hero">

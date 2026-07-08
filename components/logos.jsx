@@ -14,13 +14,17 @@ export const PRODUCT_COLORS = {
 };
 
 // Teintes dérivées pour le théming des pages produit :
-// accent (couleur du logo) / dark (hover, texte) / soft (fonds pastel).
+// accent (couleur du logo) / dark (hover, texte) / soft (fonds pastel)
+// / text (couleur de texte sur bouton plein, choisie pour un contraste
+// WCAG AA ≥ 4.5:1 mesuré contre `accent` — calcul réel, pas une valeur
+// arbitraire : dialya/labya/medira/rentara sont trop clairs pour du
+// texte blanc lisible, logistara (marine) est assez foncé pour du blanc.
 export const PRODUCT_THEME = {
-  dialya: { accent: '#0D9488', dark: '#0F766E', soft: '#F0FDFA' },
-  labya: { accent: '#06B6D4', dark: '#0891B2', soft: '#ECFEFF' },
-  medira: { accent: '#0891B2', dark: '#0E7490', soft: '#ECFEFF' },
-  rentara: { accent: '#F59E0B', dark: '#D97706', soft: '#FFFBEB' },
-  logistara: { accent: '#1E40AF', dark: '#1E3A8A', soft: '#EFF6FF' },
+  dialya: { accent: '#0D9488', dark: '#0F766E', soft: '#F0FDFA', text: '#0F172A' },
+  labya: { accent: '#06B6D4', dark: '#0E7490', soft: '#ECFEFF', text: '#0F172A' },
+  medira: { accent: '#0891B2', dark: '#0E7490', soft: '#ECFEFF', text: '#0F172A' },
+  rentara: { accent: '#F59E0B', dark: '#D97706', soft: '#FFFBEB', text: '#0F172A' },
+  logistara: { accent: '#1E40AF', dark: '#1E3A8A', soft: '#EFF6FF', text: '#FFFFFF' },
 };
 
 function DialyaIcon({ size }) {

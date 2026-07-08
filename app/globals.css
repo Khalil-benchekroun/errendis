@@ -1134,6 +1134,8 @@ svg {
 /* ── Intégration hero (accueil) ───────────────────────────── */
 
 .hero-grid {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 1.05fr 1fr;
   gap: 56px;
@@ -1258,11 +1260,15 @@ svg {
 
 .product-theme .btn--primary {
   background: var(--accent);
+  color: var(--accent-contrast, #fff);
 }
 
 .product-theme .btn--primary:hover {
-  background: var(--accent-dark);
-  filter: brightness(0.94);
+  /* Pas d'assombrissement du fond ici : sur les accents clairs/moyens
+     (teal, cyan, ambre), foncer le fond ferait chuter le contraste du
+     texte sous le seuil WCAG AA. Le retour visuel reste le léger
+     soulèvement (transform) déjà appliqué globalement aux .btn. */
+  background: var(--accent);
 }
 
 .product-theme .feature-card {
@@ -1290,15 +1296,21 @@ svg {
 
 .product-theme .cta-band {
   background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+  color: var(--accent-contrast, #fff);
 }
 
 .product-theme .cta-band p {
-  color: rgba(255, 255, 255, 0.82);
+  /* Couleur pleine (pas d'opacité) : sur les accents clairs/moyens,
+     un texte semi-transparent tombe sous le seuil de contraste WCAG. */
+  color: var(--accent-contrast, #fff);
 }
 
 .product-theme .cta-band .btn--primary {
   background: #fff;
-  color: var(--accent-dark);
+  /* Toujours du texte foncé sur fond blanc : contraste élevé garanti
+     quel que soit le produit, contrairement à accent-dark qui échouait
+     pour Labya et Rentara. */
+  color: var(--ink);
 }
 
 .product-theme .cta-band .btn--primary:hover {
@@ -2888,4 +2900,173 @@ svg {
 
 .nav-resources {
   min-width: 300px;
+}
+
+/* ── Lien d'évitement (accessibilité clavier) ─────────────── */
+
+.skip-link {
+  position: absolute;
+  top: -60px;
+  left: 12px;
+  z-index: 300;
+  background: var(--blue-700);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: top 0.15s ease;
+}
+
+.skip-link:focus {
+  top: 12px;
+}
+
+/* ── Texte visible uniquement pour les lecteurs d'écran ───── */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── Réseaux sociaux (footer) ──────────────────────────────── */
+
+.footer-social {
+  display: flex;
+  gap: 18px;
+}
+
+.footer-social a {
+  color: var(--slate-light);
+  font-size: 0.88rem;
+  transition: color 0.15s ease;
+}
+
+.footer-social a:hover {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
+
+/* ══════════════════════════════════════════════════════════
+   LOT 7 — Éléments visuels premium
+   ══════════════════════════════════════════════════════════ */
+
+/* ── Tilt 3D (cartes produits) ────────────────────────────── */
+
+.tilt-card {
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ── Mesh gradient animé (fond du hero, home) ─────────────── */
+
+.hero {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(37, 99, 235, 0.16), transparent 42%),
+    radial-gradient(circle at 85% 15%, rgba(96, 165, 250, 0.14), transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(29, 78, 216, 0.10), transparent 50%),
+    linear-gradient(160deg, var(--blue-050) 0%, #fff 55%);
+  background-size: 200% 200%, 200% 200%, 200% 200%, 100% 100%;
+  animation: mesh-drift 18s ease-in-out infinite;
+}
+
+@keyframes mesh-drift {
+  0%, 100% { background-position: 0% 0%, 100% 0%, 50% 100%, 0 0; }
+  50% { background-position: 20% 30%, 80% 20%, 40% 80%, 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    animation: none;
+  }
+}
+
+/* ── Lueur qui suit le curseur (hero) ─────────────────────── */
+
+.cursor-glow {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.cursor-glow::before {
+  content: '';
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.14), transparent 70%);
+  left: var(--glow-x, 50%);
+  top: var(--glow-y, 30%);
+  transform: translate(-50%, -50%);
+  transition: left 0.25s ease-out, top 0.25s ease-out;
+}
+
+@media (max-width: 860px), (hover: none) {
+  .cursor-glow {
+    display: none;
+  }
+}
+
+/* ── Glassmorphism (bandeau stats + CTA) ──────────────────── */
+
+.stats-band {
+  background: linear-gradient(145deg, rgba(239, 246, 255, 0.9), rgba(255, 255, 255, 0.7));
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.08);
+}
+
+.cta-band {
+  position: relative;
+}
+
+.cta-band::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), transparent 60%);
+  pointer-events: none;
+}
+
+/* ── Révélation par masque (titres de section) ────────────── */
+
+.mask-reveal {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.mask-reveal span {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.mask-reveal.mask-reveal--shown span {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mask-reveal span {
+    transform: none;
+    transition: none;
+  }
 }

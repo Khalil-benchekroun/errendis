@@ -32,6 +32,12 @@ const plexSans = IBM_Plex_Sans({
 
 const SITE_URL = 'https://errendis.com';
 
+const SOCIAL_LINKS = [
+  'https://www.instagram.com/errendis.solution',
+  'https://www.facebook.com/share/1EFLhoNuPt/',
+  'https://www.linkedin.com/company/errendis/',
+];
+
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -57,6 +63,14 @@ export const metadata = {
     title: 'Errendis — Éditeur de logiciels métiers au Maroc',
     description:
       'Des logiciels de gestion spécialisés par métier, conçus au Maroc : Labya, Rentara, Logistara, Dialya, Medira.',
+    images: [{ url: '/og/errendis-og.png', width: 1200, height: 630, alt: 'Errendis — Éditeur de logiciels métiers au Maroc' }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Errendis — Éditeur de logiciels métiers au Maroc',
+    description:
+      'Des logiciels de gestion spécialisés par métier, conçus au Maroc : Labya, Rentara, Logistara, Dialya, Medira.',
+    images: ['/og/errendis-og.png'],
   },
   icons: {
     icon: [
@@ -73,12 +87,36 @@ const organizationJsonLd = {
   '@type': 'Organization',
   name: 'Errendis',
   url: SITE_URL,
+  logo: `${SITE_URL}/favicons/errendis-apple.png`,
   description:
     'Éditeur marocain de logiciels de gestion métiers (vertical SaaS) : santé, location automobile, transit et distribution médicale.',
   address: {
     '@type': 'PostalAddress',
-    addressLocality: 'Mohammedia',
     addressCountry: 'MA',
+  },
+  sameAs: SOCIAL_LINKS,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'customer support',
+    email: 'contact@errendis.com',
+    telephone: '+212684637854',
+    areaServed: 'MA',
+    availableLanguage: ['French', 'Arabic'],
+  },
+};
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Errendis',
+  url: SITE_URL,
+  potentialAction: {
+    '@type': 'SearchAction',
+    target: {
+      '@type': 'EntryPoint',
+      urlTemplate: `${SITE_URL}/recherche?q={search_term_string}`,
+    },
+    'query-input': 'required name=search_term_string',
   },
 };
 
@@ -90,8 +128,15 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
         />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <a href="#main-content" className="skip-link">
+          Aller au contenu principal
+        </a>
         <Header />
-        <main>{children}</main>
+        <main id="main-content">{children}</main>
         <Footer />
         <WhatsAppFloat />
       </body>

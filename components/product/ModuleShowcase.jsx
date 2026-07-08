@@ -41,6 +41,8 @@ export default function ModuleShowcase({ modules, visuals }) {
                         src={mod.image}
                         alt={`Capture d'écran — ${mod.title}`}
                         loading="lazy"
+                        width="1600"
+                        height="1000"
                       />
                     </div>
                   ) : Visual ? (

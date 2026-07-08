@@ -66,11 +66,22 @@ export default function Footer() {
 
       <div className="container footer-bottom">
         <p>© {new Date().getFullYear()} Errendis. Tous droits réservés.</p>
+        <div className="footer-social">
+          <a href="https://www.instagram.com/errendis.solution?igsh=MTY2YXlkNGVyOGQ1Zg==" target="_blank" rel="noopener noreferrer" aria-label="Errendis sur Instagram">
+            Instagram
+          </a>
+          <a href="https://www.facebook.com/share/1EFLhoNuPt/" target="_blank" rel="noopener noreferrer" aria-label="Errendis sur Facebook">
+            Facebook
+          </a>
+          <a href="https://www.linkedin.com/company/errendis/" target="_blank" rel="noopener noreferrer" aria-label="Errendis sur LinkedIn">
+            LinkedIn
+          </a>
+        </div>
         <div style={{ display: 'flex', gap: 20 }}>
           <Link href="/mentions-legales">Mentions légales</Link>
           <Link href="/confidentialite">Confidentialité</Link>
         </div>
-        <p>Mohammedia · Maroc</p>
+        <p>Maroc</p>
       </div>
     </footer>
   );

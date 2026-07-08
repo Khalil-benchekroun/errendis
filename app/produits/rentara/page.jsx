@@ -6,6 +6,7 @@ import ModuleShowcase from '@/components/product/ModuleShowcase';
 import TrustSection from '@/components/product/TrustSection';
 import FaqSection from '@/components/product/FaqSection';
 import CtaSection from '@/components/product/CtaSection';
+import RelatedProducts from '@/components/product/RelatedProducts';
 import ProductLoader from '@/components/product/ProductLoader';
 import ProductAnchors from '@/components/product/ProductAnchors';
 
@@ -19,6 +20,13 @@ export const metadata = {
     title: product.seoTitle,
     description: product.seoDescription,
     url: '/produits/rentara',
+    images: [{ url: '/og/rentara-og.png', width: 1200, height: 630, alt: product.seoTitle }],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: product.seoTitle,
+    description: product.seoDescription,
+    images: ['/og/rentara-og.png'],
   },
   icons: {
     icon: [
@@ -35,6 +43,7 @@ export default function RentaraPage() {
     '--accent': theme.accent,
     '--accent-dark': theme.dark,
     '--accent-soft': theme.soft,
+    '--accent-contrast': theme.text,
   };
 
   const jsonLd = {
@@ -44,7 +53,18 @@ export default function RentaraPage() {
     applicationCategory: 'BusinessApplication',
     operatingSystem: 'Web',
     description: product.seoDescription,
+    image: 'https://errendis.com/og/rentara-og.png',
     publisher: { '@type': 'Organization', name: 'Errendis' },
+  };
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Accueil', item: 'https://errendis.com/' },
+      { '@type': 'ListItem', position: 2, name: 'Produits', item: 'https://errendis.com/#produits' },
+      { '@type': 'ListItem', position: 3, name: product.name, item: `https://errendis.com/produits/${product.slug}` },
+    ],
   };
 
   return (
@@ -55,12 +75,17 @@ export default function RentaraPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
 
       <ProductHero product={product} />
       <StatsBand stats={product.stats} />
       <ModuleShowcase modules={product.modules} />
       <TrustSection product={product} />
       <FaqSection faqs={product.faqs} productName={product.name} />
+      <RelatedProducts slugs={product.related} />
       <CtaSection productName={product.name} />
     </div>
   );

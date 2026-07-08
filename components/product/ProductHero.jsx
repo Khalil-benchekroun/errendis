@@ -25,7 +25,7 @@ export default function ProductHero({ product }) {
           <DemoTimer />
         </div>
 
-        <ComplianceBadges />
+        <ComplianceBadges set={product.badgeSet} />
 
         <div className="product-shot">
           <ProductMockup slug={product.slug} name={product.name} />

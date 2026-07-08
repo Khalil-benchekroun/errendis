@@ -3,6 +3,9 @@ import { products } from '@/lib/products';
 import ProductMockup from '@/components/ProductMockup';
 import { ProductIcon } from '@/components/logos';
 import Reveal from '@/components/Reveal';
+import TiltCard from '@/components/TiltCard';
+import CursorGlow from '@/components/CursorGlow';
+import MaskTitle from '@/components/MaskTitle';
 
 export const metadata = {
   title: 'Errendis — Des logiciels métiers qui mettent de l\u2019ordre dans vos opérations',
@@ -33,6 +36,7 @@ export default function HomePage() {
     <>
       {/* ── HERO ─────────────────────────────────────────── */}
       <section className="hero">
+        <CursorGlow />
         <div className="container hero-grid">
           <div className="hero-inner">
             <span className="hero-eyebrow">Éditeur de logiciels métiers · Maroc</span>
@@ -67,7 +71,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <span className="section-eyebrow">Nos logiciels</span>
-            <h2>Un logiciel par métier. Pas un outil générique à adapter.</h2>
+            <h2><MaskTitle>Un logiciel par métier. Pas un outil générique à adapter.</MaskTitle></h2>
             <p>
               Chaque produit Errendis est construit autour des réalités d&apos;un
               seul secteur : son vocabulaire, ses documents officiels, ses
@@ -78,18 +82,20 @@ export default function HomePage() {
           <div className="products-grid">
             {products.map((p, i) => (
               <Reveal key={p.slug} delay={i * 60}>
-                <Link
-                  href={`/produits/${p.slug}`}
-                  className="product-card"
-                >
-                  <div className="product-icon-wrap">
-                    <ProductIcon slug={p.slug} size={40} />
-                  </div>
-                  <h3>{p.name}</h3>
-                  <div className="product-sector">{p.sector}</div>
-                  <p>{p.tagline}</p>
-                  <span className="product-more">Découvrir {p.name} →</span>
-                </Link>
+                <TiltCard>
+                  <Link
+                    href={`/produits/${p.slug}`}
+                    className="product-card"
+                  >
+                    <div className="product-icon-wrap">
+                      <ProductIcon slug={p.slug} size={40} />
+                    </div>
+                    <h3>{p.name}</h3>
+                    <div className="product-sector">{p.sector}</div>
+                    <p>{p.tagline}</p>
+                    <span className="product-more">Découvrir {p.name} →</span>
+                  </Link>
+                </TiltCard>
               </Reveal>
             ))}
           </div>
@@ -101,7 +107,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <span className="section-eyebrow">Pourquoi Errendis</span>
-            <h2>Pensé pour les entreprises marocaines. Construit aux standards internationaux.</h2>
+            <h2><MaskTitle>Pensé pour les entreprises marocaines. Construit aux standards internationaux.</MaskTitle></h2>
           </div>
 
           <Reveal>
@@ -152,7 +158,7 @@ export default function HomePage() {
         <div className="container">
           <div className="section-head">
             <span className="section-eyebrow">Notre méthode</span>
-            <h2>De la démonstration à la mise en service, sans mauvaise surprise.</h2>
+            <h2><MaskTitle>De la démonstration à la mise en service, sans mauvaise surprise.</MaskTitle></h2>
           </div>
 
           <div className="method">
