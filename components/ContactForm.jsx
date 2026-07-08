@@ -66,8 +66,8 @@ export default function ContactForm({ product }) {
 
       <div className="contact-form-row">
         <label>
-          Téléphone <span className="optional">(optionnel)</span>
-          <input type="tel" name="phone" placeholder="06 XX XX XX XX" />
+          Téléphone
+          <input type="tel" name="phone" required placeholder="06 XX XX XX XX" />
         </label>
         {!product && (
           <label>

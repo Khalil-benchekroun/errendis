@@ -12,9 +12,9 @@ export async function POST(request) {
   try {
     const { name, email, phone, product, message } = await request.json();
 
-    if (!name || !email || !message) {
+    if (!name || !email || !phone || !message) {
       return Response.json(
-        { error: 'Merci de renseigner votre nom, votre email et votre message.' },
+        { error: 'Merci de renseigner votre nom, votre email, votre téléphone et votre message.' },
         { status: 400 }
       );
     }
