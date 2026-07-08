@@ -2,6 +2,7 @@ import { Space_Grotesk, Inter, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/go
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import WhatsAppFloat from '@/components/WhatsAppFloat';
+import ChatbotWidget from '@/components/ChatbotWidget';
 import './globals.css';
 
 const spaceGrotesk = Space_Grotesk({
@@ -139,6 +140,7 @@ export default function RootLayout({ children }) {
         <main id="main-content">{children}</main>
         <Footer />
         <WhatsAppFloat />
+        <ChatbotWidget />
       </body>
     </html>
   );
