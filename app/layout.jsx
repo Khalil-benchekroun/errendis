@@ -1,6 +1,7 @@
 import { Space_Grotesk, Inter, IBM_Plex_Mono, IBM_Plex_Sans } from 'next/font/google';
 import Script from 'next/script';
 import { Analytics } from '@vercel/analytics/react';
+import CookieBanner from '@/components/CookieBanner';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -174,6 +175,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <Footer />
         <WhatsAppFloat />
         <ChatbotWidget />
+        <CookieBanner />
         <Analytics />
         <SpeedInsights />
       </body>
