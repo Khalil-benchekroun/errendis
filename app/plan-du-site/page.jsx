@@ -27,6 +27,7 @@ export default function SitemapHtmlPage() {
                 <li><Link href="/">Accueil</Link></li>
                 <li><Link href="/a-propos">À propos</Link></li>
                 <li><Link href="/contact">Contact & démo</Link></li>
+                <li><Link href="/sur-mesure">Logiciel sur mesure</Link></li>
                 <li><Link href="/faq">Questions fréquentes</Link></li>
               </ul>
             </div>

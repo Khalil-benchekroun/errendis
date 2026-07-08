@@ -81,6 +81,17 @@ export default function Header() {
               </li>
             </ul>
           </div>
+          <div className="nav-group">
+            <span className="nav-group-label">Besoin spécifique</span>
+            <ul className="nav-products nav-resources">
+              <li>
+                <Link href="/sur-mesure" onClick={() => setOpen(false)}>
+                  <strong>Logiciel sur mesure</strong>
+                  <span>Un besoin qui ne correspond à aucun de nos produits</span>
+                </Link>
+              </li>
+            </ul>
+          </div>
           <Link href="/recherche" className="nav-link" onClick={() => setOpen(false)} aria-label="Rechercher">
             🔍
           </Link>

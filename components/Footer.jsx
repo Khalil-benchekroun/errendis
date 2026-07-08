@@ -60,6 +60,9 @@ export default function Footer() {
             <li>
               <Link href="/contact">Contact & démo</Link>
             </li>
+            <li>
+              <Link href="/sur-mesure">Logiciel sur mesure</Link>
+            </li>
           </ul>
         </div>
       </div>
