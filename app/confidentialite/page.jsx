@@ -3,7 +3,7 @@ import Link from 'next/link';
 export const metadata = {
   title: 'Politique de confidentialité',
   description:
-    'Politique de confidentialité d’Errendis : comment nous collectons, utilisons et protégeons vos données personnelles, conformément à la loi 09-08.',
+    'Politique de confidentialité d\u2019Errendis : comment nous collectons, utilisons et protégeons vos données personnelles, conformément à la loi 09-08.',
   alternates: { canonical: '/confidentialite' },
   robots: { index: true, follow: true },
 };
@@ -44,7 +44,9 @@ export default function ConfidentialitePage() {
           </ul>
           <p>
             Nous ne collectons aucune donnée bancaire ou sensible via ce
-            site. Aucun cookie de suivi publicitaire n’est utilisé.
+            site. Si vous acceptez les cookies analytiques, des données
+            de navigation anonymisées sont collectées via Google Analytics
+            (voir section 8).
           </p>
 
           <h2>3. Pourquoi collectons-nous ces données ?</h2>
@@ -68,15 +70,15 @@ export default function ConfidentialitePage() {
             Vos données sont conservées le temps nécessaire au traitement
             de votre demande, puis archivées selon nos obligations
             légales et commerciales usuelles, dans la limite de 3 ans en
-            l’absence de relation contractuelle ultérieure.
+            l'absence de relation contractuelle ultérieure.
           </p>
 
           <h2>6. Vos droits</h2>
           <p>
             Conformément à la loi marocaine n° 09-08 relative à la
-            protection des personnes physiques à l’égard du traitement
-            des données à caractère personnel, vous disposez d’un droit
-            d’accès, de rectification, d’opposition et de suppression de
+            protection des personnes physiques à l'égard du traitement
+            des données à caractère personnel, vous disposez d'un droit
+            d'accès, de rectification, d'opposition et de suppression de
             vos données. Pour exercer ces droits, contactez-nous à{' '}
             <a href="mailto:contact@errendis.com">contact@errendis.com</a>.
           </p>
@@ -91,12 +93,32 @@ export default function ConfidentialitePage() {
             service.
           </p>
 
-          <h2>8. Cookies</h2>
+          <h2>8. Cookies et mesure d'audience</h2>
           <p>
-            Ce site n’utilise pas de cookies de suivi publicitaire ou
-            d’analyse tiers à ce jour. Si des outils de mesure d’audience
-            (type Google Analytics) sont ajoutés ultérieurement, cette
-            politique sera mise à jour en conséquence.
+            Ce site utilise les outils suivants pour mesurer son audience
+            et améliorer son contenu :
+          </p>
+          <ul style={{ marginBottom: 16, color: 'var(--slate)' }}>
+            <li>
+              <strong>Google Analytics 4</strong> — collecte des données
+              de navigation anonymisées (pages visitées, durée de session,
+              source du trafic). Activé uniquement si vous acceptez les
+              cookies via le bandeau affiché lors de votre première visite.
+              Géré via Google Tag Manager (GTM-5ZW7NF4F).
+            </li>
+            <li>
+              <strong>Vercel Analytics & Speed Insights</strong> — mesure
+              des performances techniques du site (temps de chargement,
+              Core Web Vitals). Ne collecte aucune donnée personnelle
+              identifiable et ne nécessite pas de consentement.
+            </li>
+          </ul>
+          <p>
+            Vous pouvez à tout moment modifier votre choix en effaçant
+            les données de votre navigateur (localStorage) ou en nous
+            contactant à{' '}
+            <a href="mailto:contact@errendis.com">contact@errendis.com</a>.
+            Aucun cookie publicitaire ou de remarketing n'est utilisé.
           </p>
 
           <h2>9. Modifications de cette politique</h2>
