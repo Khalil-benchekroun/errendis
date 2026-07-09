@@ -1,5 +1,14 @@
-export default function PatientAppSection({ app }) {
+// Modification SEO juillet 2026 :
+// - Ajout prop `productName` pour enrichir l'attribut alt
+// - alt passe de "Application mobile patient" à "{produit} — Application mobile : {titre}"
+// - Appel dans page.jsx : <PatientAppSection app={product.patientApp} productName={product.name} />
+
+export default function PatientAppSection({ app, productName }) {
   if (!app) return null;
+
+  const altText = productName
+    ? `${productName} — Application mobile : ${app.title}`
+    : `Application mobile — ${app.title}`;
 
   return (
     <section id="app-dediee" className="section patient-app">
@@ -35,7 +44,13 @@ export default function PatientAppSection({ app }) {
                 <span />
                 <span />
               </div>
-              <img src={app.image} alt="Application mobile patient" loading="lazy" width="1600" height="1000" />
+              <img
+                src={app.image}
+                alt={altText}
+                loading="lazy"
+                width="1600"
+                height="1000"
+              />
             </div>
           </div>
         </div>

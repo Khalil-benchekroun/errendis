@@ -1,4 +1,9 @@
-export default function ModuleShowcase({ modules, visuals }) {
+// Modification SEO juillet 2026 :
+// - Ajout prop `productName` pour enrichir les attributs alt
+// - alt passe de "Capture d'écran — {titre}" à "{produit} — {titre} : aperçu du module"
+// - Appel dans page.jsx : <ModuleShowcase modules={product.modules} productName={product.name} />
+
+export default function ModuleShowcase({ modules, visuals, productName }) {
   if (!modules?.length) return null;
 
   return (
@@ -39,7 +44,11 @@ export default function ModuleShowcase({ modules, visuals }) {
                       </div>
                       <img
                         src={mod.image}
-                        alt={`Capture d'écran — ${mod.title}`}
+                        alt={
+                          productName
+                            ? `${productName} — ${mod.title} : aperçu du module`
+                            : `Aperçu du module ${mod.title}`
+                        }
                         loading="lazy"
                         width="1600"
                         height="1000"
