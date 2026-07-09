@@ -35,6 +35,36 @@ function formatDate(dateStr) {
   });
 }
 
+// ── RENDERER DE CONTENU ──────────────────────────────────────
+// Supporte les types : h2, p, p-link
+// p-link : paragraphe avec liens internes intégrés
+// Format liens dans text : [[texte|/url]]
+// Ex: "Découvrez [[Labya|/produits/labya]] pour les laboratoires."
+function renderInlineLinks(text) {
+  const parts = text.split(/(\[\[.*?\]\])/g);
+  return parts.map((part, i) => {
+    const match = part.match(/^\[\[(.*?)\|(.*?)\]\]$/);
+    if (match) {
+      return (
+        <Link key={i} href={match[2]} className="blog-inline-link">
+          {match[1]}
+        </Link>
+      );
+    }
+    return part;
+  });
+}
+
+function ContentBlock({ block, i }) {
+  if (block.type === 'h2') {
+    return <h2 key={i}>{block.text}</h2>;
+  }
+  if (block.type === 'p-link') {
+    return <p key={i}>{renderInlineLinks(block.text)}</p>;
+  }
+  return <p key={i}>{block.text}</p>;
+}
+
 export default async function BlogPostPage({ params }) {
   const { slug } = await params;
   const post = getPost(slug);
@@ -93,12 +123,9 @@ export default async function BlogPostPage({ params }) {
       <section className="section">
         <div className="container">
           <article className="blog-article">
-            {post.content.map((block, i) => {
-              if (block.type === 'h2') {
-                return <h2 key={i}>{block.text}</h2>;
-              }
-              return <p key={i}>{block.text}</p>;
-            })}
+            {post.content.map((block, i) => (
+              <ContentBlock key={i} block={block} i={i} />
+            ))}
           </article>
 
           {related.length > 0 && (
