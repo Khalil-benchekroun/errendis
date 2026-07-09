@@ -876,8 +876,10 @@ svg {
   }
 
   .nav--open {
-    display: flex;
-  }
+  display: flex;
+  max-height: calc(100vh - 68px);
+  overflow-y: auto;
+}
 
   .nav-group-label {
     display: block;
