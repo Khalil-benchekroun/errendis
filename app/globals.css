@@ -3590,3 +3590,93 @@ svg {
   border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow: 0 4px 14px rgba(37, 99, 235, 0.08);
 }
+/* ── BANDEAU CLIENTS DÉFILANT ──────────────────────────────
+   Ajouter dans globals.css après la section .stats-band-home
+─────────────────────────────────────────────────────────── */
+
+.clients-section {
+  padding: 52px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-alt);
+  overflow: hidden;
+}
+
+.clients-label {
+  text-align: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-tertiary, #94a3b8);
+  margin-bottom: 32px;
+}
+
+.clients-track-wrap {
+  overflow: hidden;
+  /* masque les bords pour un effet fondu propre */
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 10%,
+    black 90%,
+    transparent 100%
+  );
+}
+
+.clients-track {
+  display: flex;
+  gap: 56px;
+  width: max-content;
+  animation: clients-scroll 28s linear infinite;
+}
+
+/* Pause au survol */
+.clients-track:hover {
+  animation-play-state: paused;
+}
+
+.clients-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 60px;
+}
+
+.clients-item img {
+  height: 40px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  /* Uniformise tous les logos en gris — look pro SaaS */
+  filter: grayscale(100%) opacity(0.55);
+  transition: filter 0.3s ease;
+}
+
+.clients-item img:hover {
+  filter: grayscale(0%) opacity(1);
+}
+
+@keyframes clients-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Respect des préférences d'animation */
+@media (prefers-reduced-motion: reduce) {
+  .clients-track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 32px;
+    width: 100%;
+  }
+}

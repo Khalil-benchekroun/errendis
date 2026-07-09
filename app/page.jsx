@@ -7,6 +7,7 @@ import TiltCard from '@/components/TiltCard';
 import CursorGlow from '@/components/CursorGlow';
 import MaskTitle from '@/components/MaskTitle';
 import Hero3DLogo from '@/components/Hero3DLogo';
+import ClientsCarousel from '@/components/ClientsCarousel';
 
 // ── MÉTADONNÉES PAGE ACCUEIL ─────────────────────────────────────────────────
 // Title : 60 car. — mot-clé principal en tête (corrigé depuis 75 car.)
@@ -77,6 +78,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── CLIENTS ──────────────────────────────────────── */}
+      <ClientsCarousel />
 
       {/* ── PRODUITS ─────────────────────────────────────── */}
       <section className="section" id="produits">
