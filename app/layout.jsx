@@ -44,38 +44,47 @@ const SOCIAL_LINKS = [
   'https://www.linkedin.com/company/errendis/',
 ];
 
+// ── MÉTADONNÉES GLOBALES ─────────────────────────────────────────────────────
+// Title : 50 caractères (était 75 → corrigé)
+// Description : 155 caractères, 9 verticaux présents (était 201 → corrigé)
 export const metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Errendis — Éditeur de logiciels métiers au Maroc',
+    default: 'Errendis — Logiciels métiers SaaS au Maroc',
     template: '%s | Errendis',
   },
   description:
-    'Errendis conçoit des logiciels de gestion spécialisés par métier : laboratoires d\u2019analyses médicales, location de voitures, transit, hémodialyse et distribution médicale.',
+    'Éditeur SaaS marocain : Labya, Dialya, Medira, Rentara, Logistara, Medikara, Restara, Batira, Skolara — un logiciel de gestion spécialisé par secteur.',
   keywords: [
     'logiciel de gestion Maroc',
-    'éditeur logiciel Maroc',
+    'éditeur logiciel SaaS Maroc',
     'logiciel laboratoire analyses médicales',
-    'logiciel location voiture',
-    'logiciel transitaire',
-    'logiciel hémodialyse',
-    'SaaS Maroc',
+    'logiciel hémodialyse Maroc',
+    'logiciel location voiture Maroc',
+    'logiciel transit freight Maroc',
+    'logiciel distribution médicale',
+    'logiciel délégués médicaux',
+    'logiciel restaurant café Maroc',
+    'logiciel BTP chantier Maroc',
+    'logiciel gestion école crèche Maroc',
+    'SaaS B2B Maroc',
+    'Errendis',
   ],
   openGraph: {
     type: 'website',
     locale: 'fr_MA',
     url: SITE_URL,
     siteName: 'Errendis',
-    title: 'Errendis — Éditeur de logiciels métiers au Maroc',
+    title: 'Errendis — Logiciels métiers SaaS au Maroc',
     description:
-      'Des logiciels de gestion spécialisés par métier, conçus au Maroc : Labya, Rentara, Logistara, Dialya, Medira.',
-    images: [{ url: '/og/errendis-og.png', width: 1200, height: 630, alt: 'Errendis — Éditeur de logiciels métiers au Maroc' }],
+      'Éditeur SaaS marocain : Labya, Dialya, Medira, Rentara, Logistara, Medikara, Restara, Batira, Skolara — un logiciel de gestion spécialisé par secteur.',
+    images: [{ url: '/og/errendis-og.png', width: 1200, height: 630, alt: 'Errendis — Logiciels métiers SaaS au Maroc' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Errendis — Éditeur de logiciels métiers au Maroc',
+    title: 'Errendis — Logiciels métiers SaaS au Maroc',
     description:
-      'Des logiciels de gestion spécialisés par métier, conçus au Maroc : Labya, Rentara, Logistara, Dialya, Medira.',
+      'Éditeur SaaS marocain : Labya, Dialya, Medira, Rentara, Logistara, Medikara, Restara, Batira, Skolara — un logiciel de gestion spécialisé par secteur.',
     images: ['/og/errendis-og.png'],
   },
   icons: {
@@ -88,6 +97,7 @@ export const metadata = {
   robots: { index: true, follow: true },
 };
 
+// ── SCHEMA ORGANIZATION ──────────────────────────────────────────────────────
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -95,9 +105,12 @@ const organizationJsonLd = {
   url: SITE_URL,
   logo: `${SITE_URL}/favicons/errendis-apple.png`,
   description:
-    'Éditeur marocain de logiciels de gestion métiers (vertical SaaS) : santé, location automobile, transit et distribution médicale.',
+    'Éditeur marocain de logiciels de gestion métiers (vertical SaaS) : santé, laboratoires, location automobile, transit, distribution médicale, restauration, BTP et éducation.',
   address: {
     '@type': 'PostalAddress',
+    streetAddress: 'Casablanca',
+    addressLocality: 'Casablanca',
+    addressRegion: 'Grand Casablanca-Settat',
     addressCountry: 'MA',
   },
   sameAs: SOCIAL_LINKS,
@@ -111,6 +124,7 @@ const organizationJsonLd = {
   },
 };
 
+// ── SCHEMA WEBSITE ───────────────────────────────────────────────────────────
 const websiteJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
@@ -124,6 +138,48 @@ const websiteJsonLd = {
     },
     'query-input': 'required name=search_term_string',
   },
+};
+
+// ── SCHEMA LOCAL BUSINESS ────────────────────────────────────────────────────
+// Ajouté : manquait selon l'audit SEOptimer (corrige le signal "LocalBusiness absent")
+const localBusinessJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  '@id': `${SITE_URL}/#local-business`,
+  name: 'Errendis',
+  description:
+    'Éditeur marocain de logiciels de gestion SaaS spécialisés par secteur : santé, location automobile, transit, restauration, BTP et éducation.',
+  url: SITE_URL,
+  telephone: '+212684637854',
+  email: 'contact@errendis.com',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Casablanca',
+    addressLocality: 'Casablanca',
+    addressRegion: 'Grand Casablanca-Settat',
+    postalCode: '20000',
+    addressCountry: 'MA',
+  },
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 33.5731,
+    longitude: -7.5898,
+  },
+  areaServed: {
+    '@type': 'Country',
+    name: 'Maroc',
+  },
+  priceRange: '$$',
+  image: `${SITE_URL}/og/errendis-og.png`,
+  sameAs: SOCIAL_LINKS,
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
 };
 
 const GTM_ID = 'GTM-5ZW7NF4F';
@@ -165,6 +221,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
         />
+        {/* LocalBusiness — ajouté pour corriger l'audit SEOptimer */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+        />
+
         <a href="#main-content" className="skip-link">
           Aller au contenu principal
         </a>

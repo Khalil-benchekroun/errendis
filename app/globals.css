@@ -380,6 +380,69 @@ svg {
   background: var(--bg-alt);
 }
 
+/* ── PATCH SEO juillet 2026 ────────────────────────────────── */
+
+.section--no-top {
+  padding-top: 0;
+}
+
+.sectors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.sector-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+
+.sector-item h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.sector-item p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.stats-band-home {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 24px;
+  text-align: center;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent);
+  font-family: var(--font-display);
+  line-height: 1;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* ── FIN PATCH ─────────────────────────────────────────────── */
+
 .section-head {
   max-width: 640px;
   margin-bottom: 52px;
@@ -1418,7 +1481,7 @@ svg {
 
 /* ── Bandeau de stats (StatsBand) ─────────────────────────── */
 
-.stats-band {
+.stats-band-home {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   gap: 22px;
@@ -1601,7 +1664,7 @@ svg {
     aspect-ratio: 16 / 9;
   }
 
-  .stats-band {
+  .stats-band-home {
     padding: 28px 24px;
   }
 }
@@ -3043,7 +3106,7 @@ svg {
 
 /* ── Glassmorphism (bandeau stats + CTA) ──────────────────── */
 
-.stats-band {
+.stats-band-home {
   background: linear-gradient(145deg, rgba(239, 246, 255, 0.9), rgba(255, 255, 255, 0.7));
   backdrop-filter: blur(14px);
   border: 1px solid rgba(255, 255, 255, 0.6);
