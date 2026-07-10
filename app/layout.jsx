@@ -95,6 +95,13 @@ export const metadata = {
     apple: '/favicons/errendis-apple.png',
   },
   robots: { index: true, follow: true },
+  alternates: {
+    canonical: SITE_URL,
+    languages: {
+      'fr-MA': SITE_URL,
+      'fr': SITE_URL,
+    },
+  },
 };
 
 // ── SCHEMA ORGANIZATION ──────────────────────────────────────────────────────
