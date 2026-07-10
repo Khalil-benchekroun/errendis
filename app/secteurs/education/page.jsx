@@ -61,8 +61,8 @@ export default function SecteurEducationPage() {
       <section className="page-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Fil d'Ariane">
-            <Link href="/">Accueil</Link> {' '}/<{' '}
-            <Link href="/secteurs">Secteurs</Link> {' '}/{' '}
+            <Link href="/">Accueil</Link>{' '}/{' '}
+            <Link href="/secteurs">Secteurs</Link>{' '}/{' '}
             Logiciel de gestion pour les établissements d'enseignement privé au Maroc
           </nav>
           <span className="section-eyebrow">Secteur · Éducation privée</span>

@@ -61,8 +61,8 @@ export default function SecteurLocationPage() {
       <section className="page-hero">
         <div className="container">
           <nav className="breadcrumb" aria-label="Fil d'Ariane">
-            <Link href="/">Accueil</Link> {' '}/<{' '}
-            <Link href="/secteurs">Secteurs</Link> {' '}/{' '}
+            <Link href="/">Accueil</Link>{' '}/{' '}
+            <Link href="/secteurs">Secteurs</Link>{' '}/{' '}
             Logiciel de gestion pour agences de location de voitures au Maroc
           </nav>
           <span className="section-eyebrow">Secteur · Location automobile</span>
