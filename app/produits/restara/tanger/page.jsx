@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Tanger ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Tanger, tanger, ville cosmopolite à la croisée de l'europe et de l'afrique, a une scène gastronomique riche et variée. les restaurants doivent gérer une clien Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Tanger, tanger, ville cosmopolite à la croisée de l\u2019europe et de l\u2019afrique, a une scène gastronomique riche et variée. les restaurants doivent gérer une clien Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {

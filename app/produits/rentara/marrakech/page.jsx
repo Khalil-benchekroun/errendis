@@ -64,10 +64,10 @@ const faqJsonLd = {
     },
     {
       '@type': 'Question',
-      name: 'Peut-on gérer plusieurs agences à Marrakech et dans d'autres villes ?',
+      name: 'Peut-on gérer plusieurs agences à Marrakech et dans d\u2019autres villes ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Marrakech et d'autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d'accès par agence.',
+        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Marrakech et d\u2019autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d\u2019accès par agence.',
       },
     },
     {

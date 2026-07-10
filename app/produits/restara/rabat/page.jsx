@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Rabat ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Rabat, la clientèle de rabat est composée de fonctionnaires, de diplomates et d'une classe moyenne aisée. les restaurants misent sur la qualité et le service Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Rabat, la clientèle de rabat est composée de fonctionnaires, de diplomates et d\u2019une classe moyenne aisée. les restaurants misent sur la qualité et le service Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {

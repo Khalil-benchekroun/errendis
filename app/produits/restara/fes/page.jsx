@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Fès ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Fès, fès est réputée pour sa gastronomie traditionnelle marocaine. les restaurants doivent gérer une offre authentique tout en répondant aux attentes des t Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Fès, fès est réputée pour sa gastronomie traditionnelle marocaine. les restaurants doivent gérer une offre authentique tout en répondant aux attentes des t Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {

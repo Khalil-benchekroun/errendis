@@ -59,15 +59,15 @@ const faqJsonLd = {
       name: 'Rentara fonctionne-t-il pour une agence de location à Casablanca ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Rentara est conçu pour les agences de location de voitures marocaines, quelle que soit leur ville. À Casablanca, entre l'aéroport mohammed v, la zone industrielle et les quartiers d'affaires, les agences de location de casablanca gèr... Rentara gère cette réalité avec un planning flotte en temps réel et des alertes automatiques.',
+        text: 'Oui, Rentara est conçu pour les agences de location de voitures marocaines, quelle que soit leur ville. À Casablanca, entre l\u2019aéroport mohammed v, la zone industrielle et les quartiers d\u2019affaires, les agences de location de casablanca gèr... Rentara gère cette réalité avec un planning flotte en temps réel et des alertes automatiques.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Peut-on gérer plusieurs agences à Casablanca et dans d'autres villes ?',
+      name: 'Peut-on gérer plusieurs agences à Casablanca et dans d\u2019autres villes ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Casablanca et d'autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d'accès par agence.',
+        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Casablanca et d\u2019autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d\u2019accès par agence.',
       },
     },
     {

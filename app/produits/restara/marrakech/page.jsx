@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Marrakech ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Marrakech, marrakech attire des millions de touristes internationaux chaque année. les restaurants doivent gérer des menus en plusieurs langues, des fluctuations Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Marrakech, marrakech attire des millions de touristes internationaux chaque année. les restaurants doivent gérer des menus en plusieurs langues, des fluctuations Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {

@@ -59,15 +59,15 @@ const faqJsonLd = {
       name: 'Rentara fonctionne-t-il pour une agence de location à Tanger ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Rentara est conçu pour les agences de location de voitures marocaines, quelle que soit leur ville. À Tanger, tanger est en pleine transformation avec le développement de tanger med et l'afflux de multinationales. les agences de l... Rentara gère cette réalité avec un planning flotte en temps réel et des alertes automatiques.',
+        text: 'Oui, Rentara est conçu pour les agences de location de voitures marocaines, quelle que soit leur ville. À Tanger, tanger est en pleine transformation avec le développement de tanger med et l\u2019afflux de multinationales. les agences de l... Rentara gère cette réalité avec un planning flotte en temps réel et des alertes automatiques.',
       },
     },
     {
       '@type': 'Question',
-      name: 'Peut-on gérer plusieurs agences à Tanger et dans d'autres villes ?',
+      name: 'Peut-on gérer plusieurs agences à Tanger et dans d\u2019autres villes ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Tanger et d'autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d'accès par agence.',
+        text: 'Oui, Rentara est multi-sites nativement. Vous pouvez gérer votre agence de Tanger et d\u2019autres points de location (Casablanca, Rabat, Marrakech...) depuis un tableau de bord unique, avec des droits d\u2019accès par agence.',
       },
     },
     {

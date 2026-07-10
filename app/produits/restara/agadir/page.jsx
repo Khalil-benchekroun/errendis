@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Agadir ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Agadir, la restauration d'agadir est fortement orientée tourisme avec une clientèle internationale. la gestion des stocks est critique pour éviter les rupture Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Agadir, la restauration d\u2019agadir est fortement orientée tourisme avec une clientèle internationale. la gestion des stocks est critique pour éviter les rupture Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {

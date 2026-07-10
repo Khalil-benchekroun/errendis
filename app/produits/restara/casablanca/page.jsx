@@ -54,7 +54,7 @@ const faqJsonLd = {
       name: 'Restara convient-il aux restaurants de Casablanca ?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Casablanca, casablanca concentre les restaurants haut de gamme, les chaînes de restauration rapide et les cafés de quartier. la concurrence est intense et les att Restara s'adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
+        text: 'Oui, Restara est conçu pour les restaurants et cafés marocains. À Casablanca, casablanca concentre les restaurants haut de gamme, les chaînes de restauration rapide et les cafés de quartier. la concurrence est intense et les att Restara s\u2019adapte à ces réalités avec une caisse rapide et un écran cuisine KDS.',
       },
     },
     {
