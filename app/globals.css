@@ -3723,3 +3723,53 @@ svg {
   border-color: var(--accent-dark, #1e40af);
   color: #fff;
 }
+/* ── GLOSSAIRE PAGES INDIVIDUELLES ────────────────────────
+   Ajouter dans globals.css à la fin
+─────────────────────────────────────────────────────────── */
+
+.term-short-def {
+  font-size: 1.15rem;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin-top: 12px;
+  line-height: 1.7;
+}
+
+.term-content {
+  max-width: 720px;
+}
+
+.term-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.term-content p:last-child {
+  margin-bottom: 0;
+}
+
+.glossary-term-link {
+  color: var(--text-primary);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid var(--border);
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.glossary-term-link:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.glossary-more-link {
+  font-size: 0.85rem;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.glossary-more-link:hover {
+  text-decoration: underline;
+}
