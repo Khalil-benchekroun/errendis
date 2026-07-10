@@ -32,7 +32,7 @@ const jsonLd = {
       '@type': 'Person',
       name: 'Khalil Benchekroun',
       jobTitle: 'Fondateur & CTO',
-      image: `${SITE_URL}/khalil-profil.jpg`,
+      image: `${SITE_URL}/khalil-profil.png`,
     },
     description:
       'Éditeur marocain de logiciels de gestion métiers (vertical SaaS) : santé, location automobile, transit et distribution médicale.',
@@ -107,7 +107,7 @@ export default function AboutPage() {
             {/* Photo Khalil */}
             <div className="founder-photo">
               <Image
-                src="/khalil-profil.jpg"
+                src="/khalil-profil.png"
                 alt="Khalil Benchekroun — Fondateur et CTO d'Errendis"
                 width={280}
                 height={280}

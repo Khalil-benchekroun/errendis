@@ -97,7 +97,7 @@ export default function PourquoiErrendisPage() {
           <div className="founder-block">
             <div className="founder-photo">
               <Image
-                src="/khalil-profil.jpg"
+                src="/khalil-profil.png"
                 alt="Khalil Benchekroun — Fondateur et CTO d'Errendis"
                 width={280}
                 height={280}
