@@ -3652,9 +3652,9 @@ svg {
 }
 
 .clients-item img {
-  height: 60px;
+  height: 80px;
   width: auto;
-  max-width: 180px;
+  max-width: 220px;
   object-fit: contain;
   /* Uniformise tous les logos en gris — look pro SaaS */
   filter: grayscale(100%) opacity(0.55);
@@ -3772,4 +3772,56 @@ svg {
 
 .glossary-more-link:hover {
   text-decoration: underline;
+}
+/* ── BLOC FONDATEUR ────────────────────────────────────────
+   Ajouter dans globals.css à la fin
+─────────────────────────────────────────────────────────── */
+
+.founder-block {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.founder-photo {
+  flex-shrink: 0;
+}
+
+.founder-img {
+  border-radius: 20px;
+  object-fit: cover;
+  width: 280px;
+  height: 280px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+}
+
+.founder-text h2 {
+  font-size: 1.6rem;
+  margin: 12px 0 16px;
+  line-height: 1.3;
+}
+
+.founder-text p {
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .founder-block {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .founder-photo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .founder-img {
+    width: 200px;
+    height: 200px;
+  }
 }
