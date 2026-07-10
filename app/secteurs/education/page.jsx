@@ -21,7 +21,7 @@ const breadcrumbJsonLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Accueil', item: `${SITE_URL}/` },
     { '@type': 'ListItem', position: 2, name: 'Secteurs', item: `${SITE_URL}/secteurs` },
-    { '@type': 'ListItem', position: 3, name: 'Logiciel de gestion pour les établissements d'enseignement privé au Maroc', item: `${SITE_URL}/secteurs/education` },
+    { '@type': 'ListItem', position: 3, name: 'Logiciel de gestion pour les établissements d\u2019enseignement privé au Maroc', item: `${SITE_URL}/secteurs/education` },
   ],
 };
 
@@ -32,12 +32,12 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Skolara est-il compatible avec Massar ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Skolara couvre les fonctions que Massar ne propose pas pour les privés : paiements, cantine, communication parents et gestion commerciale. Pour les fonctions officielles couvertes par Massar, Skolara peut s\'interfacer avec la plateforme ministérielle.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Skolara couvre les fonctions que Massar ne propose pas pour les privés : paiements, cantine, communication parents et gestion commerciale. Pour les fonctions officielles couvertes par Massar, Skolara peut s\\u2019interfacer avec la plateforme ministérielle.' },
     },
     {
       '@type': 'Question',
       name: 'Skolara inclut-il une application mobile pour les parents ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Skolara propose une application mobile parent pour consulter les notes, recevoir des notifications d\'absence, voir le menu de cantine, payer les frais de scolarité et communiquer avec les enseignants.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Skolara propose une application mobile parent pour consulter les notes, recevoir des notifications d\\u2019absence, voir le menu de cantine, payer les frais de scolarité et communiquer avec les enseignants.' },
     },
     {
       '@type': 'Question',

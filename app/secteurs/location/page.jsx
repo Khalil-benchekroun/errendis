@@ -32,7 +32,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Rentara fonctionne-t-il pour les agences multi-sites au Maroc ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Rentara est conçu pour la gestion multi-agences : tableau de bord centralisé, transferts de véhicules entre sites et droits d\'accès par agence. Il est disponible dans toutes les villes : Casablanca, Rabat, Marrakech, Agadir, Fès et Tanger.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Rentara est conçu pour la gestion multi-agences : tableau de bord centralisé, transferts de véhicules entre sites et droits d\\u2019accès par agence. Il est disponible dans toutes les villes : Casablanca, Rabat, Marrakech, Agadir, Fès et Tanger.' },
     },
     {
       '@type': 'Question',

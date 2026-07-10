@@ -32,7 +32,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Logistara couvre-t-il les formalités douanières marocaines ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Logistara est conçu pour les transitaires et commissionnaires en douane marocains. Il gère les dossiers d\'importation et d\'exportation avec tous les documents requis par l\'ADII, les délais, les alertes et le suivi des expéditions de bout en bout.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Logistara est conçu pour les transitaires et commissionnaires en douane marocains. Il gère les dossiers d\\u2019importation et d\\u2019exportation avec tous les documents requis par l\\u2019ADII, les délais, les alertes et le suivi des expéditions de bout en bout.' },
     },
     {
       '@type': 'Question',
@@ -42,7 +42,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Logistara gère-t-il les surestaries ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Logistara intègre un système d\'alertes automatiques avant les échéances de free time pour chaque conteneur, permettant d\'anticiper et d\'éviter les surestaries.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Logistara intègre un système d\\u2019alertes automatiques avant les échéances de free time pour chaque conteneur, permettant d\\u2019anticiper et d\\u2019éviter les surestaries.' },
     }
   ],
 };

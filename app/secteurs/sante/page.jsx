@@ -32,7 +32,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Quels logiciels Errendis couvrent le secteur de la santé au Maroc ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Errendis propose quatre logiciels pour la santé : Labya pour les laboratoires d\'analyses médicales, Dialya pour les centres d\'hémodialyse, Medira pour les distributeurs d\'équipements médicaux, et Medikara pour les délégués médicaux et forces de vente pharmaceutiques.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Errendis propose quatre logiciels pour la santé : Labya pour les laboratoires d\\u2019analyses médicales, Dialya pour les centres d\\u2019hémodialyse, Medira pour les distributeurs d\\u2019équipements médicaux, et Medikara pour les délégués médicaux et forces de vente pharmaceutiques.' },
     },
     {
       '@type': 'Question',

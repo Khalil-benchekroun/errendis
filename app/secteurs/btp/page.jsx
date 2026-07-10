@@ -32,7 +32,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Batira gère-t-il les retenues de garantie dans les marchés marocains ?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Batira calcule automatiquement les retenues de garantie sur chaque décompte, suit leur cumul par chantier et déclenche des alertes à l\'approche des dates de libération (réception provisoire et définitive).' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Oui, Batira calcule automatiquement les retenues de garantie sur chaque décompte, suit leur cumul par chantier et déclenche des alertes à l\\u2019approche des dates de libération (réception provisoire et définitive).' },
     },
     {
       '@type': 'Question',
