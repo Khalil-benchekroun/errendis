@@ -91,6 +91,9 @@ export default function Footer() {
           <a href="https://www.linkedin.com/company/errendis/" target="_blank" rel="noopener noreferrer" aria-label="Errendis sur LinkedIn">
             LinkedIn
           </a>
+          <a href="https://www.tiktok.com/@errendis" target="_blank" rel="noopener noreferrer" aria-label="Errendis sur TikTok">
+            TikTok
+          </a>
         </div>
         <div style={{ display: 'flex', gap: 20 }}>
           <Link href="/mentions-legales">Mentions légales</Link>
