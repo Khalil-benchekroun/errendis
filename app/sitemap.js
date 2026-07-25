@@ -5,7 +5,7 @@ import { posts } from '@/lib/blog';
 export const dynamic = 'force-static';
 
 export default function sitemap() {
-  const base = 'https://errendis.com';
+  const base = 'https://www.errendis.com';  // ← seul changement
   const now = new Date();
 
   return [
