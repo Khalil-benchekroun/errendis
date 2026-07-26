@@ -1,5 +1,4 @@
 // app/produits/skolara/rabat/page.jsx
-// Creer ce fichier dans ton projet Next.js
 
 import Link from 'next/link';
 import { getProduct } from '@/lib/products';
@@ -8,8 +7,8 @@ import CtaSection from '@/components/product/CtaSection';
 const product = getProduct('skolara');
 
 export const metadata = {
-  title: 'Skolara Rabat — Logiciel de gestion scolaire pour \u00e9coles priv\u00e9es \u00e0 Rabat',
-  description: 'Skolara est le logiciel de gestion scolaire utilis\u00e9 par les \u00e9coles priv\u00e9es \u00e0 Rabat : inscriptions, absences, bulletins, paiements et application parents. D\u00e9mo gratuite.',
+  title: "Skolara Rabat — Logiciel de gestion scolaire pour écoles privées à Rabat",
+  description: "Skolara est le logiciel de gestion scolaire utilisé par les écoles privées à Rabat : inscriptions, absences, bulletins, paiements et application parents. Démo gratuite.",
   alternates: { canonical: '/produits/skolara/rabat' },
 };
 
@@ -19,7 +18,7 @@ const jsonLd = {
   name: 'Skolara',
   applicationCategory: 'BusinessApplication',
   operatingSystem: 'Web',
-  description: 'Logiciel de gestion scolaire pour \u00e9coles priv\u00e9es \u00e0 Rabat',
+  description: "Logiciel de gestion scolaire pour écoles privées à Rabat",
   publisher: { '@type': 'Organization', name: 'Errendis' },
   areaServed: { '@type': 'City', name: 'Rabat' },
 };
@@ -34,15 +33,15 @@ export default function SkolaraRabatPage() {
           <nav className="breadcrumb">
             <Link href="/">Accueil</Link> / <Link href="/produits/skolara">Skolara</Link> / Rabat
           </nav>
-          <span className="blog-card-category">\u00c9ducation \u2014 Rabat</span>
+          <span className="blog-card-category">Éducation — Rabat</span>
           <h1 style={{ marginTop: 12 }}>
-            Logiciel de gestion scolaire \u00e0 Rabat
+            Logiciel de gestion scolaire à Rabat
           </h1>
           <p style={{ fontSize: '1.1rem', marginTop: 16, maxWidth: 680 }}>
-            Skolara est adopt\u00e9 par les \u00e9coles priv\u00e9es de Rabat pour g\u00e9rer inscriptions, absences, bulletins et paiements \u2014 avec une application parents disponible en fran\u00e7ais et en arabe.
+            Skolara est adopté par les écoles privées de Rabat pour gérer inscriptions, absences, bulletins et paiements — avec une application parents disponible en français et en arabe.
           </p>
           <div style={{ marginTop: 24, display: 'flex', gap: 12, flexWrap: 'wrap' }}>
-            <Link href="/contact" className="btn btn--primary">Demander une d\u00e9mo gratuite</Link>
+            <Link href="/contact" className="btn btn--primary">Demander une démo gratuite</Link>
             <Link href="/produits/skolara" className="btn btn--ghost">Voir Skolara</Link>
           </div>
         </div>
@@ -50,17 +49,17 @@ export default function SkolaraRabatPage() {
 
       <section className="section">
         <div className="container">
-          <h2>Pourquoi les \u00e9coles priv\u00e9es rabatises choisissent Skolara</h2>
-          <p>Rabat concentre le plus grand nombre d\u2019\u00e9coles priv\u00e9es du Maroc et la concurrence entre \u00e9tablissements y est la plus forte. Les familles rabatises comparent les outils num\u00e9riques de chaque \u00e9cole. Skolara vous donne l\u2019avantage concurrentiel d\u2019une communication instantan\u00e9e avec les parents.</p>
+          <h2>Pourquoi les écoles privées rabaties choisissent Skolara</h2>
+          <p>Rabat-Salé-Kénitra est la deuxième région du Maroc pour l&apos;enseignement privé. La proximité des institutions gouvernementales et des familles de cadres crée une clientèle scolaire exigeante. La qualité des outils numériques est un signal fort de sérieux et de professionnalisme pour les familles rabaties.</p>
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: 24, marginTop: 40 }}>
             {[
-              { title: 'Absences en temps r\u00e9el', text: 'Les parents rabatis re\u00e7oivent une notification push d\u00e8s que leur enfant est absent \u2014 sans attendre un appel du secr\u00e9tariat.' },
-              { title: 'Bulletins g\u00e9n\u00e9r\u00e9s automatiquement', text: 'Votre maquette de bulletin configur\u00e9e une fois, les bulletins se g\u00e9n\u00e8rent en un clic \u00e0 chaque fin de trimestre.' },
-              { title: 'Paiements depuis le t\u00e9l\u00e9phone', text: 'Les parents r\u00e8glent les frais de scolarit\u00e9 depuis leur mobile. Les relances automatiques r\u00e9duisent les impay\u00e9s de 40 \u00e0 60%.' },
-              { title: 'Application parents bilingue', text: 'Interface disponible en fran\u00e7ais et en arabe \u2014 adapt\u00e9e aux familles cosmopolites de Rabat.' },
-              { title: 'Emplois du temps sans conflit', text: 'Construction automatis\u00e9e des emplois du temps avec d\u00e9tection en temps r\u00e9el des conflits de salles et d\u2019enseignants.' },
-              { title: 'Mise en service en 3 \u00e0 7 jours', text: 'Op\u00e9rationnel avant la rentr\u00e9e de septembre. Vos donn\u00e9es \u00e9l\u00e8ves import\u00e9es, votre \u00e9quipe form\u00e9e.' },
+              { title: 'Absences en temps réel', text: "Les parents rabatis reçoivent une notification push dès que leur enfant est absent — sans attendre un appel du secrétariat." },
+              { title: 'Bulletins générés automatiquement', text: "Votre maquette de bulletin configurée une fois, les bulletins se génèrent en un clic à chaque fin de trimestre." },
+              { title: 'Paiements depuis le téléphone', text: "Les parents règlent les frais de scolarité depuis leur mobile. Les relances automatiques réduisent les impayés de 40 à 60%." },
+              { title: 'Application parents bilingue', text: "Interface disponible en français et en arabe — adaptée aux familles bilingues de la capitale." },
+              { title: 'Emplois du temps sans conflit', text: "Construction automatisée des emplois du temps avec détection en temps réel des conflits de salles et d'enseignants." },
+              { title: 'Mise en service en 3 à 7 jours', text: "Opérationnel avant la rentrée de septembre. Vos données élèves importées, votre équipe formée." },
             ].map((f, i) => (
               <div key={i} style={{ background: 'var(--surface)', borderRadius: 12, padding: 24 }}>
                 <strong style={{ display: 'block', marginBottom: 8 }}>{f.title}</strong>
@@ -70,9 +69,9 @@ export default function SkolaraRabatPage() {
           </div>
 
           <div style={{ marginTop: 48, padding: 32, background: 'var(--surface)', borderRadius: 16 }}>
-            <h2 style={{ marginTop: 0 }}>D\u00e9ployer Skolara dans votre \u00e9cole \u00e0 Rabat avant septembre 2026</h2>
-            <p>Il reste suffisamment de temps en ao\u00fbt. Contactez-nous pour une d\u00e9monstration sur vos propres donn\u00e9es \u2014 sans engagement.</p>
-            <Link href="/contact" className="btn btn--primary">Demander une d\u00e9mo</Link>
+            <h2 style={{ marginTop: 0 }}>Déployer Skolara dans votre école à Rabat avant septembre 2026</h2>
+            <p>Il reste suffisamment de temps en août. Contactez-nous pour une démonstration sur vos propres données — sans engagement.</p>
+            <Link href="/contact" className="btn btn--primary">Demander une démo</Link>
           </div>
         </div>
       </section>
